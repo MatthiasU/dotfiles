@@ -28,6 +28,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
 set splitbelow
