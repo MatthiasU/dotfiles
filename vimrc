@@ -24,6 +24,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'valloric/youcompleteme'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -75,4 +76,8 @@ let g:syntastic_check_on_wq = 0
 
 " Clang-format
 map <leader>ff :py3f /opt/homebrew/share/clang/clang-format.py<CR>
+
+" CtrlP Fuzzy Search
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
