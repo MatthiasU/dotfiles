@@ -17,6 +17,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'akinsho/toggleterm.nvim'
@@ -45,8 +46,8 @@ imap <right> <nop>
 
 lua require('lsp_config')
 
-set background=dark
-colorscheme gruvbox
+set background=light
+colorscheme PaperColor
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
