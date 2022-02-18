@@ -20,6 +20,7 @@ Plug 'morhetz/gruvbox'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -42,8 +43,6 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-inoremap jj <Esc>
-
 lua require('lsp_config')
 
 set background=dark
@@ -62,3 +61,6 @@ nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
 lua require('toggle_term_helpers')
 
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
