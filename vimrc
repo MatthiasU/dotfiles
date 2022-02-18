@@ -17,6 +17,7 @@ highlight ColorColum ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/nerdtree'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-fugitive'
@@ -24,12 +25,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'valloric/youcompleteme'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
-colorscheme gruvbox
+set background=light
+colorscheme PaperColor
 let g:gruvbox_contrast_dark = 'hard'
-set background=dark
 
 set splitbelow
 set splitright
@@ -48,7 +50,13 @@ inoremap jj <Esc>
 
 " Setup YouCompleteMe
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jh :YcmCompleter GetDoc<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nmap <leader>fsw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>fsd <Plug>(YCMFindSymbolInDocument)
+
+let g:ycm_clangd_uses_ycmd_caching = 0
+let g:ycm_clangd_binary_path = exepath("clangd")
 
 " Disable Arrow keys in Normal mode
 map <up> <nop>
@@ -78,7 +86,6 @@ let g:syntastic_check_on_wq = 0
 " Clang-format
 map <leader>ff :py3f /opt/homebrew/share/clang/clang-format.py<CR>
 
-" CtrlP Fuzzy Search
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" FZF
 
+map <leader>F :Files<CR>
