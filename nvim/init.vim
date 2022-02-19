@@ -10,7 +10,7 @@ set incsearch
 set backspace=indent,eol,start
 set mouse=a
 
-call plug#begin()
+call plug#begin() 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -22,6 +22,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -30,7 +32,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-cabbrev bterm bo term
+
+inoremap jj <Esc>
 
 " Disable Arrow keys in Normal mode
 map <up> <nop>
@@ -46,8 +49,8 @@ imap <right> <nop>
 
 lua require('lsp_config')
 
-set background=light
-colorscheme PaperColor
+set background=dark
+colorscheme gruvbox
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -66,5 +69,4 @@ lua require('toggle_term_helpers')
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-:nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>
-
+nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>
