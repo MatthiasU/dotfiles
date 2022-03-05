@@ -10,7 +10,10 @@ set incsearch
 set backspace=indent,eol,start
 set mouse=a
 
-call plug#begin() 
+" Trim trailing whitespaces on write
+autocmd BufWritePre * :%s/\s\+$//e
+
+call plug#begin()
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -26,6 +29,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -72,4 +76,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 
  "Commenter mapping
 " <leader>c<space> toggle
+
+" Configure GitGutter
+set updatetime=100
 
