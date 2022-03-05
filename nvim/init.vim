@@ -25,6 +25,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -33,8 +34,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-inoremap jj <Esc>
 
 " Disable Arrow keys in Normal mode
 map <up> <nop>
@@ -51,13 +50,14 @@ imap <right> <nop>
 lua require('lsp_config')
 
 set background=dark
-colorscheme gruvbox
+colorscheme PaperColor
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>
 
 " Toggle Terminal
 lua require("toggleterm").setup()
@@ -70,4 +70,6 @@ lua require('toggle_term_helpers')
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>
+ "Commenter mapping
+" <leader>c<space> toggle
+
