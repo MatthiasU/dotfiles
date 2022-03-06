@@ -30,6 +30,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+Plug 'arcticicestudio/nord-vim'
+Plug 'ajmwagar/vim-deus'
+Plug 'danilo-augusto/vim-afterglow'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -53,11 +56,12 @@ imap <right> <nop>
 
 lua require('lsp_config')
 
-set background=dark
-colorscheme PaperColor
+let g:afterglow_blackout=0
+colorscheme afterglow
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>gf <cmd>Telescope git_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
