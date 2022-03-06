@@ -33,7 +33,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ajmwagar/vim-deus'
 Plug 'danilo-augusto/vim-afterglow'
-Plug 'cdelledonne/vim-cmake'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -48,6 +47,7 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
 " Disable Arrow keys in Insert mode
 imap <up> <nop>
 imap <down> <nop>
@@ -75,14 +75,12 @@ inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
 lua require('toggle_term_helpers')
 
 " NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
  "Commenter mapping
 " <leader>c<space> toggle
 
 " Configure GitGutter
 set updatetime=100
-
-" CMake configuration
-let g:cmake_build_dir_location="build"
 
