@@ -75,8 +75,7 @@ inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
 lua require('toggle_term_helpers')
 
 " NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
  "Commenter mapping
 " <leader>c<space> toggle
