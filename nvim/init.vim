@@ -65,6 +65,8 @@ set background=dark
 colorscheme everforest
 
 " Find files using Telescope command-line sugar.
+lua require('telescope_config')
+
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>gf <cmd>Telescope git_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
