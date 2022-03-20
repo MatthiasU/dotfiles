@@ -9,30 +9,34 @@ set noswapfile
 set incsearch
 set backspace=indent,eol,start
 set mouse=a
+set signcolumn=yes
 
 " Trim trailing whitespaces on write
 autocmd BufWritePre * :%s/\s\+$//e
 
 call plug#begin()
+Plug 'sainnhe/everforest'
+" LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
-Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
+
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
 Plug 'akinsho/toggleterm.nvim'
+
 Plug 'preservim/nerdtree'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ajmwagar/vim-deus'
-Plug 'danilo-augusto/vim-afterglow'
+
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -47,7 +51,6 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-
 " Disable Arrow keys in Insert mode
 imap <up> <nop>
 imap <down> <nop>
@@ -56,8 +59,8 @@ imap <right> <nop>
 
 lua require('lsp_config')
 
-let g:afterglow_blackout=0
-colorscheme afterglow
+set background=dark
+colorscheme everforest
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -75,12 +78,11 @@ inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
 lua require('toggle_term_helpers')
 
 " NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
  "Commenter mapping
 " <leader>c<space> toggle
-
 " Configure GitGutter
 set updatetime=100
 
