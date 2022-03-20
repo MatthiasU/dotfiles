@@ -10,6 +10,7 @@ set incsearch
 set backspace=indent,eol,start
 set mouse=a
 set signcolumn=yes
+set nowrap
 
 " Trim trailing whitespaces on write
 autocmd BufWritePre * :%s/\s\+$//e
