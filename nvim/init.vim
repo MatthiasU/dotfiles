@@ -37,6 +37,8 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'preservim/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
+
+Plug 'bfrg/vim-cpp-modern/'
 call plug#end()
 
 let mapleader="\<Space>"
