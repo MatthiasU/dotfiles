@@ -85,5 +85,8 @@ let NERDTreeShowHidden=1
 " Configure GitGutter
 set updatetime=100
 
+" Git Gutter
+nnoremap <leader>pc <Cmd>GitGutterPreviewHunk<CR>
+
 " Editor config plugin
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
