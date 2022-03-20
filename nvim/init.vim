@@ -70,11 +70,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>
 
 " Toggle Terminal
-lua require("toggleterm").setup()
-let g:toggleterm_terminal_mapping = '<C-t>'
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>
-lua require('toggle_term_helpers')
+lua require('toggle_term_config')
 
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
