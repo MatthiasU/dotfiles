@@ -72,8 +72,8 @@ nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbol
 " Toggle Terminal
 lua require("toggleterm").setup()
 let g:toggleterm_terminal_mapping = '<C-t>'
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=horizontal"<CR>
 lua require('toggle_term_helpers')
 
 " NERDTree
