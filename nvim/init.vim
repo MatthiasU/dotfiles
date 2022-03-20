@@ -35,6 +35,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'preservim/nerdcommenter'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 let mapleader="\<Space>"
@@ -84,3 +85,5 @@ let NERDTreeShowHidden=1
 " Configure GitGutter
 set updatetime=100
 
+" Editor config plugin
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
