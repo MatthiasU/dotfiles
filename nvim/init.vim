@@ -49,6 +49,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap <leader>b] :bnext<cr>
+nnoremap <leader>b[ :bprev<cr>
+
 " Disable Arrow keys in Normal mode
 map <up> <nop>
 map <down> <nop>
