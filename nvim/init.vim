@@ -22,8 +22,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'akinsho/toggleterm.nvim'
 
@@ -64,15 +65,12 @@ lua require('lsp_config')
 set background=dark
 colorscheme everforest
 
-" Find files using Telescope command-line sugar.
-lua require('telescope_config')
-
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>gf <cmd>Telescope git_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>
+" FZF
+let g:fzf_preview_window = ['right:50', 'ctrl-\']
+let g:fzf_layout = { 'down': '~20%' }
+nnoremap <leader>ff <cmd>Files<cr>
+nnoremap <leader>gf <cmd>GFiles<cr>
+nnoremap <leader>fb <cmd>Buffers<cr>
 
 " Toggle Terminal
 lua require('toggle_term_config')
