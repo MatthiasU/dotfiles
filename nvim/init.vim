@@ -11,6 +11,7 @@ set backspace=indent,eol,start
 set mouse=a
 set signcolumn=yes
 set nowrap
+set splitright
 
 " Trim trailing whitespaces on write
 autocmd BufWritePre * :%s/\s\+$//e
@@ -22,11 +23,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-Plug 'akinsho/toggleterm.nvim'
 
 Plug 'preservim/nerdtree'
 
@@ -75,8 +73,9 @@ nnoremap <leader>ff <cmd>Files<cr>
 nnoremap <leader>gf <cmd>GFiles<cr>
 nnoremap <leader>fb <cmd>Buffers<cr>
 
-" Toggle Terminal
-lua require('toggle_term_config')
+" Terminal
+tnoremap <Esc> <C-\><C-n>
+cabbrev bterm bo term
 
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
