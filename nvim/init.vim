@@ -1,7 +1,7 @@
 
 set number relativenumber
-set tabstop=2 softtabstop=2
-set shiftwidth=2
+set tabstop=4 softtabstop=4
+set shiftwidth=4
 set expandtab
 set smartindent
 set smartcase
@@ -22,33 +22,25 @@ Plug 'sainnhe/everforest'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'preservim/nerdtree'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 
-Plug 'preservim/nerdcommenter'
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'bfrg/vim-cpp-modern/'
 call plug#end()
 
 let mapleader="\<Space>"
-nnoremap <leader>w :w<CR>
+
+" navigating between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-nnoremap <leader>b] :bnext<cr>
-nnoremap <leader>b[ :bprev<cr>
 
 " Disable Arrow keys in Normal mode
 map <up> <nop>
@@ -67,27 +59,15 @@ set background=dark
 colorscheme everforest
 
 " FZF
-let g:fzf_preview_window = ['right:50', 'ctrl-\']
+let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']
 let g:fzf_layout = { 'down': '~20%' }
 nnoremap <leader>ff <cmd>Files<cr>
 nnoremap <leader>gf <cmd>GFiles<cr>
 nnoremap <leader>fb <cmd>Buffers<cr>
 
-" Terminal
-tnoremap <Esc> <C-\><C-n>
-cabbrev bterm bo term
-
-" NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
- "Commenter mapping
-" <leader>c<space> toggle
 " Configure GitGutter
 set updatetime=100
 
 " Git Gutter
 nnoremap <leader>pc <Cmd>GitGutterPreviewHunk<CR>
 
-" Editor config plugin
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
