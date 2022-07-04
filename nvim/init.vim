@@ -20,9 +20,15 @@ call plug#begin()
 Plug 'sainnhe/everforest'
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -31,6 +37,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "Plug 'airblade/vim-gitgutter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -54,6 +61,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 lua require('lsp_config')
+autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
 
 set background=dark
 colorscheme everforest
