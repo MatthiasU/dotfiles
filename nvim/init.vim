@@ -17,7 +17,9 @@ set splitright
 autocmd BufWritePre * :%s/\s\+$//e
 
 call plug#begin()
+" Colorscheme
 Plug 'sainnhe/everforest'
+
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -62,8 +64,13 @@ imap <left> <nop>
 imap <right> <nop>
 
 lua require('lsp_config')
-autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 
+if has('termguicolors')
+  set termguicolors
+endif
+
+let g:everforest_background = 'hard'
 set background=dark
 colorscheme everforest
 
@@ -79,4 +86,8 @@ set updatetime=100
 
 " Git Gutter
 nnoremap <leader>pc <Cmd>GitGutterPreviewHunk<CR>
+
+" TreeSitter
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
+
 
