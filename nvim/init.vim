@@ -69,6 +69,9 @@ if has('termguicolors')
 endif
 
 let g:everforest_background = 'hard'
+let g:everforest_better_performance = 1
+let g:everforest_transparent_background= 1
+let g:airline_theme = 'everforest'
 set background=dark
 colorscheme everforest
 
