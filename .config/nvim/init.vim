@@ -1,7 +1,7 @@
 
 set number relativenumber
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set smartcase
@@ -32,8 +32,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Fuzzy Finder
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -68,19 +69,17 @@ if has('termguicolors')
   set termguicolors
 endif
 
-let g:everforest_background = 'hard'
+let g:everforest_background = 'medium'
 let g:everforest_better_performance = 1
 let g:everforest_transparent_background= 1
 let g:airline_theme = 'everforest'
 set background=dark
 colorscheme everforest
 
-" FZF
-let g:fzf_preview_window = ['right:40%:hidden', 'ctrl-/']
-let g:fzf_layout = { 'down': '~20%' }
-nnoremap <leader>ff <cmd>Files<cr>
-nnoremap <leader>gf <cmd>GFiles<cr>
-nnoremap <leader>fb <cmd>Buffers<cr>
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope git_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 " Configure GitGutter
 set updatetime=100
