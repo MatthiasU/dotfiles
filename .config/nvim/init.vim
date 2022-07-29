@@ -36,8 +36,8 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Status bar
+Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -106,6 +106,8 @@ imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 lua require('lsp_config')
+lua require('statusline')
+
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 
 
