@@ -19,6 +19,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 call plug#begin()
 " Colorscheme
 Plug 'sainnhe/everforest'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -76,7 +77,10 @@ let g:everforest_better_performance = 1
 let g:everforest_transparent_background= 1
 let g:airline_theme = 'everforest'
 set background=dark
-colorscheme everforest
+let g:tokyonight_style = 'night'
+let g:tokyonight_transparent = 1
+
+colorscheme tokyonight
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
