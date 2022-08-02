@@ -114,13 +114,10 @@ require('lspconfig').sourcekit.setup {
 require 'lspconfig'.sumneko_lua.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  diagnostics = {
-    -- Get the language server to recognize the `vim` global
-    globals = { "vim" },
+  settings = {
+    Lua = {
+      diagnostics = { globals = { 'vim' }
+      }
+    }
   },
-}
-
-require 'lspconfig'.html.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
 }
