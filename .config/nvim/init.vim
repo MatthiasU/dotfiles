@@ -7,6 +7,7 @@ set smartindent
 set smartcase
 set noswapfile
 set incsearch
+set nohlsearch
 set backspace=indent,eol,start
 set mouse=a
 set signcolumn=yes
@@ -15,7 +16,6 @@ set splitright
 
 " Trim trailing whitespaces on write
 autocmd BufWritePre * :%s/\s\+$//e
-
 call plug#begin()
 " Colorscheme
 Plug 'sainnhe/everforest'
