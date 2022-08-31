@@ -2,7 +2,6 @@ lua require('matthiasu')
 " Trim trailing whitespaces on write
 call plug#begin()
 " Colorscheme
-Plug 'sainnhe/everforest'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " LSP
