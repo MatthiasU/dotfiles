@@ -52,21 +52,6 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-
-if has('termguicolors')
-  set termguicolors
-endif
-
-let g:everforest_background = 'medium'
-let g:everforest_better_performance = 1
-let g:everforest_transparent_background= 1
-let g:airline_theme = 'everforest'
-set background=dark
-let g:tokyonight_style = 'night'
-let g:tokyonight_transparent = 1
-
-colorscheme tokyonight
-
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope git_files<cr>
