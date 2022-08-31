@@ -114,9 +114,6 @@ smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab
 imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
-lua require('lsp_config')
-lua require('statusline')
-
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 
 nnoremap <leader>n :NERDTreeFocus<CR>
