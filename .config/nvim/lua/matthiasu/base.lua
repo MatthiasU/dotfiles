@@ -20,3 +20,4 @@ vim.opt.splitright = true
 vim.opt.path:append { '**' }
 
 vim.g.mapleader = " "
+vim.opt.updatetime = 100
