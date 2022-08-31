@@ -1,19 +1,4 @@
-
-set number relativenumber
-set tabstop=2 softtabstop=2
-set shiftwidth=2
-set expandtab
-set smartindent
-set smartcase
-set noswapfile
-set incsearch
-set nohlsearch
-set backspace=indent,eol,start
-set mouse=a
-set signcolumn=yes
-set nowrap
-set splitright
-
+lua require('matthiasu.base')
 " Trim trailing whitespaces on write
 autocmd BufWritePre * :%s/\s\+$//e
 call plug#begin()
