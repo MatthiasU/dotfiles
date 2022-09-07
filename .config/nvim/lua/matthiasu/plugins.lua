@@ -28,6 +28,6 @@ return require('packer').startup(function(use)
 		'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
 	}
 
-	use 'preservim/nerdtree'
+	use 'kyazdani42/nvim-tree.lua'
 
 end)
