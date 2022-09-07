@@ -17,7 +17,5 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 
 vim.opt.splitright = true
-vim.opt.path:append { '**' }
 
 vim.g.mapleader = " "
-vim.opt.updatetime = 100
