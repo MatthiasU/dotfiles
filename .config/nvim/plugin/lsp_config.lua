@@ -132,10 +132,6 @@ require('lspconfig').tsserver.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
-require('lspconfig').sourcekit.setup {
-	capabilities = capabilities,
-	on_attach = on_attach,
-}
 
 require 'lspconfig'.sumneko_lua.setup {
 	capabilities = capabilities,
