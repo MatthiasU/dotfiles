@@ -15,7 +15,7 @@ vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.mouse = "a"
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
-
+vim.opt.cursorline = true
 vim.opt.splitright = true
 
 vim.g.mapleader = " "

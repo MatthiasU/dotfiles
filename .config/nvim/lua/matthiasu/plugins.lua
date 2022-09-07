@@ -4,9 +4,9 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	use {
-		'folke/tokyonight.nvim', branch = 'main'
-	}
+	use 'folke/tokyonight.nvim'
+	use 'sainnhe/everforest'
+
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
@@ -23,9 +23,11 @@ return require('packer').startup(function(use)
 
 	use 'airblade/vim-gitgutter'
 	use 'tpope/vim-fugitive'
+
 	use {
 		'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
 	}
+
 	use 'preservim/nerdtree'
 
 end)

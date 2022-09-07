@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/matthiasu/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  everforest = {
+    loaded = true,
+    path = "/Users/matthiasu/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/matthiasu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
