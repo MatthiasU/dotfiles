@@ -1,4 +1,11 @@
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 
-vim.cmd [[colorscheme tokyonight-storm]]
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+
+require("catppuccin").setup({
+	transparent_background = false,
+})
+
+vim.cmd [[colorscheme catppuccin]]
+
