@@ -17,5 +17,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.splitright = true
+vim.opt.colorcolumn = '80'
 
 vim.g.mapleader = " "
