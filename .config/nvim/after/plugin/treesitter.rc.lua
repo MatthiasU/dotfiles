@@ -1,11 +1,9 @@
-require 'nvim-treesitter.configs'.setup {
-	highlight = {
-		enable = true
-	},
-	incremental_selection = {
-		enable = true
-	},
-	textobjects = {
-		enable = true
-	}
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "cpp", "lua", "help" },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false
+  },
 }

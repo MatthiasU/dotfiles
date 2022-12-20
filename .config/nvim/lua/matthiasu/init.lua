@@ -1,6 +1,7 @@
 require('matthiasu.base')
 require('matthiasu.keymap')
 require('matthiasu.plugins')
+require('matthiasu.remap')
 
 local autocmd = vim.api.nvim_create_autocmd
 

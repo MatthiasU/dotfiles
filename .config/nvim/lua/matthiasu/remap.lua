@@ -19,3 +19,5 @@ inoremap('<up>', '<nop>')
 inoremap('<down>', '<nop>')
 inoremap('<left>', '<nop>')
 inoremap('<right>', '<nop>')
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
