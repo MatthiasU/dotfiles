@@ -109,16 +109,6 @@ _G.packer_plugins = {
     path = "/Users/matthiasu/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/Users/matthiasu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  ["lsp-zero.nvim"] = {
-    loaded = true,
-    path = "/Users/matthiasu/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/Users/matthiasu/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
