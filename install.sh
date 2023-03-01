@@ -22,6 +22,6 @@ fi
 cp -r .config/nvim $CONFIG_DIR
 cp -r .config/tmux $CONFIG_DIR
 
-cp .zprofile $HOME/.zprofile
+#cp .zprofile $HOME/.zprofile
 cp .vimrc $HOME/.vimrc
 
