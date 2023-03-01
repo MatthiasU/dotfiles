@@ -4,4 +4,8 @@ local nnoremap = Remap.nnoremap
 
 nnoremap('<leader>n', ":NvimTreeToggle<cr>")
 
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+    view = {
+        side = "right"
+    }
+})
