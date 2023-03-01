@@ -1,10 +1,4 @@
-require("mason-lspconfig").setup({
-    ensure_installed = {
-        'clangd',
-        'sumneko_lua',
-        'cmake'
-    }
-})
+require("mason-lspconfig").setup()
 
 local lsp_config = require('lspconfig')
 
@@ -59,15 +53,15 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local sumneko_settings = {
+local lua_settings = {
     Lua = {
         diagnostics = { globals = { 'vim' } }
     }
 }
 
-lsp_config.sumneko_lua.setup {
+lsp_config.lua_ls.setup {
     on_attach = on_attach,
-    settings = sumneko_settings,
+    settings = lua_settings,
     capabilities = capabilities
 }
 

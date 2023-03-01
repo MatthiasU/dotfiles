@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-
+    use { 'nvim-tree/nvim-tree.lua'}
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
