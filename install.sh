@@ -25,3 +25,24 @@ cp -r .config/tmux $CONFIG_DIR
 #cp .zprofile $HOME/.zprofile
 cp .vimrc $HOME/.vimrc
 
+# Install neovim
+
+if [[ "$OSTYPE" =~ ^linux ]]; then
+  sudo apt update && sudo apt install curl
+
+  NEO_VIM_IMAGE="https://github.com/neovim/neovim/releases/latest/download/nvim.appimage"
+
+  cd $HOME
+  curl -LO $NEO_VIM_IMAGE
+  chmod u+x nvim.appimage && ./nvim.appimage --appimage-extract
+  sudo mv squashfs-root /
+  sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+  if [ -d "$HOME/nvim.appimage" ]; then
+    rm -rf $HOME/nvim.appimage
+  fi
+fi
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    sudo brew install neovim
+fi
+
