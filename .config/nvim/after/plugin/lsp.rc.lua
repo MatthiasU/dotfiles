@@ -1,4 +1,3 @@
-require("mason-lspconfig").setup()
 
 local lsp_config = require('lspconfig')
 
@@ -71,6 +70,11 @@ lsp_config.clangd.setup {
 }
 
 lsp_config.cmake.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+lsp_config.pylsp.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
