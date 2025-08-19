@@ -41,10 +41,10 @@ require('lazy').setup({
         { "preservim/nerdtree" },
 
         -- Comment
-        { "numToStr/Comment.nvim"}, 
+        { "numToStr/Comment.nvim"},
 
-        -- Git 
-        { "tpope/vim-fugitive"}, 
+        -- Git
+        { "tpope/vim-fugitive"},
 
     },
     checker = { enabled = true },
@@ -75,7 +75,7 @@ vim.g.netrw_liststyle = 3
 vim.keymap.set('n', '<leader>w', ':update<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>o', ':source<CR>', { noremap = true, silent = true })
 
--- UI 
+-- UI
 
 require('catppuccin').setup({
     flavour = 'macchiato',
@@ -164,4 +164,9 @@ vim.cmd([[ let g:NERDTreeWinPos = "right" ]])
 vim.keymap.set('n', '<leader>n', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>t', ':NERDTreeFind<CR>', { noremap = true, silent = true })
 
+-- Trailing whitespaces
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
 
