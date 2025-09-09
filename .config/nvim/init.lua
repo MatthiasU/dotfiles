@@ -2,8 +2,7 @@
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git" local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
@@ -19,10 +18,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
    spec = {
 	    -- Colorscheme
-	    { "catppuccin/nvim", name = "catppuccin" },
 	    { "rose-pine/neovim", name = "rose-pine" },
 
-	    -- LSP configuration
+        -- LSP configuration
 	    { "neovim/nvim-lspconfig" },
 
 	    -- Fuzzy Finder
@@ -32,18 +30,7 @@ require('lazy').setup({
 	    -- Linting
 	    { "mfussenegger/nvim-lint" },
 
-	    -- Autocompletion framework
-	    { "hrsh7th/nvim-cmp" },
-	    { "hrsh7th/cmp-nvim-lsp" },
-	    { "hrsh7th/cmp-vsnip" },
-	    { "hrsh7th/vim-vsnip" },
-
-        { "preservim/nerdtree" },
-
-        -- Comment
-        { "numToStr/Comment.nvim"},
-
-        -- Git
+       -- Git
         { "tpope/vim-fugitive"},
 
     },
@@ -66,9 +53,10 @@ vim.o.mouse = 'a'
 vim.o.hidden = true
 vim.o.background = 'dark'
 vim.o.splitbelow = true
+vim.o.swapfile = false
 vim.o.splitright = true
 vim.o.wildmenu = true
-vim.o.hlsearch = true
+vim.o.hlsearch = false
 vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 
@@ -76,22 +64,15 @@ vim.keymap.set('n', '<leader>w', ':update<CR>', { noremap = true, silent = true 
 vim.keymap.set('n', '<leader>o', ':source<CR>', { noremap = true, silent = true })
 
 -- UI
-
-require('catppuccin').setup({
-    flavour = 'macchiato',
-    background = { dark },
-    transparent_background = true,
-})
-
 require('rose-pine').setup({
     variant = "moon", -- auto, main, moon, or dawn
-    extend_background_behind_borders = true,
-    dark_variant = "main", -- main, moon, or dawn
+    extend_background_behind_borders = false,
+    dark_variant = "moon", -- main, moon, or dawn
     dim_inactive_windows = false,
     styles = {
         bold = true,
         italic = false,
-        transparency = false,
+        transparency = true,
     },
 })
 
@@ -102,45 +83,39 @@ vim.o.winborder = 'rounded'
 -- Fuzzy finder
 
 vim.keymap.set('n', '<C-p>', ':GFiles<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>ff', ':Files<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>b', ':Buffers<CR>', { noremap = true, silent = true })
-
--- LSP
-
-local lspconfig = require('lspconfig')
-local cmp_nvim_lsp = require('cmp_nvim_lsp')
-local capabilities = cmp_nvim_lsp.default_capabilities()
+vim.keymap.set('n', '<C-f>', ':Files<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
 
 -- Terminal
 vim.keymap.set('t', '<Esc>', ':<C-\\><C-n>', { noremap = true, silent = true })
--- vim.keymap.set('n', '<leader>t', ':tabnew term://zsh<CR>', { noremap = true, silent = true })
 
-lspconfig.clangd.setup({
-  capabilities = capabilities,
+-- LSP
+
+vim.lsp.enable('clangd')
+vim.lsp.enable('cmake')
+vim.lsp.enable('pyright')
+vim.lsp.enable('texlab')
+
+-- set autocomplete behavior.
+--   fuzzy = fuzzy search in results
+--   menuone = show menu, even if there is only 1 item
+--   popup = show extra info in popup
+--   noselect = don't insert the text until an item is selected
+vim.cmd('set completeopt=fuzzy,menuone,popup,noselect')
+
+-- set up stuff when the LSP client attaches
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('lsp', {}),
+    callback = function(args)
+	local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+        vim.lsp.completion.enable(true, client.id, args.buf, {autotrigger = true})
+    end,
 })
 
-lspconfig.pyright.setup({
-  capabilities = capabilities,
-})
+vim.keymap.set('i', '<C-space>', function()
+    vim.lsp.completion.get()
+end)
 
-
-lspconfig.cmake.setup({
-  capabilities = capabilities,
-})
-
-local cmp = require('cmp')
-cmp.setup({
-    mapping = cmp.mapping.preset.insert({
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-Space>'] = cmp.mapping.complete(),
-    }),
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' },
-    })
-})
 
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
@@ -148,7 +123,10 @@ vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, { noremap = true, silent = t
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true, silent = true })
 vim.keymap.set('n', 'gn', vim.lsp.buf.rename, { noremap = true, silent = true })
-
+vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { noremap = true, silent = true })
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true })
+vim.keymap.set('n', 'gq', vim.lsp.formatexpr, { noremap = true, silent = true })
+vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
 
 -- Linter
@@ -158,11 +136,15 @@ lint.linters_by_ft = {
     python = { 'ruff' }
 }
 
--- NERD Tree
+-- Netrw
 
-vim.cmd([[ let g:NERDTreeWinPos = "right" ]])
-vim.keymap.set('n', '<leader>n', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>t', ':NERDTreeFind<CR>', { noremap = true, silent = true })
+vim.g.netrw_keepdir=0
+vim.g.netrw_banner=0
+vim.g.netrw_winsize=30
+
+vim.keymap.set('n', '<leader>dd', ':Lexplore %:p:h<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>da', ':Lexplore<CR>', { noremap = true, silent = true })
+
 
 -- Trailing whitespaces
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
