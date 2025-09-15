@@ -150,7 +150,7 @@ dap.adapters.lldb = {
 }
 
 -- Terminal
-vim.keymap.set('t', '<Esc>', ':<C-\\><C-n>', { noremap = true, silent = true })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>st',
     function()
         vim.cmd.vnew()
