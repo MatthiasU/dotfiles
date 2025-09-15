@@ -24,7 +24,7 @@ require('lazy').setup({
         { "neovim/nvim-lspconfig" },
 
         -- DAP
-        { "mfussenegger/nvim-dap"},
+        { "mfussenegger/nvim-dap" },
 
         -- Fuzzy Finder
         { "junegunn/fzf" },
@@ -69,7 +69,7 @@ vim.g.netrw_liststyle = 3
 
 -- UI
 require('rose-pine').setup({
-    variant = "main",      -- auto, main, moon, or dawn
+    variant = "main",    -- auto, main, moon, or dawn
     extend_background_behind_borders = false,
     dark_variant = "main", -- main, moon, or dawn
     dim_inactive_windows = false,
@@ -144,9 +144,9 @@ vim.keymap.set('n', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>db', ':DapToggleBreakpoint<CR>', { noremap = true, silent = true })
 local dap = require('dap')
 dap.adapters.lldb = {
-  type = 'executable',
-  command = '/Library/Developer/CommandLineTools/usr/bin/lldb-dap', -- adjust as needed, must be absolute path
-  name = 'lldb'
+    type = 'executable',
+    command = '/Library/Developer/CommandLineTools/usr/bin/lldb-dap', -- adjust as needed, must be absolute path
+    name = 'lldb'
 }
 
 -- Terminal
@@ -181,7 +181,6 @@ require("nvim-tree").setup {
         side = "right"
     }
 }
-
 
 -- Trailing whitespaces
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
