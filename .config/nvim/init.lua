@@ -21,6 +21,10 @@ vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 
 vim.cmd.colorscheme('kanagawa')
+require('kanagawa').setup({
+    transparent = true,
+    terminalColors = true,
+})
 
 vim.keymap.set('n', '<leader>w', ':update<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>o', ':source<CR>', { noremap = true, silent = true })
