@@ -18,3 +18,5 @@ echo "Needs plenary dependency..."
 git clone $GITHUB/nvim-lua/plenary.nvim $PLUGIN_PATH/plenary
 git clone $GITHUB/nvim-telescope/telescope.nvim $PLUGIN_PATH/telescope
 
+echo "Install vim fugitive"
+git clone $GITHUB/tpope/vim-fugitive $PLUGIN_PATH/vim-fugitive
