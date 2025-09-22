@@ -19,12 +19,13 @@ vim.o.wildmenu = true
 vim.o.hlsearch = false
 vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
+vim.opt.termguicolors = true
 
-vim.cmd.colorscheme('kanagawa')
 require('kanagawa').setup({
     transparent = true,
-    terminalColors = true,
 })
+
+vim.cmd.colorscheme('kanagawa')
 
 vim.keymap.set('n', '<leader>w', ':update<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>o', ':source<CR>', { noremap = true, silent = true })
@@ -86,6 +87,14 @@ vim.keymap.set('n', '<leader>st',
     end,
     { noremap = true, silent = true })
 
+vim.keymap.set('n', '<leader>tt',
+    function()
+        vim.cmd.tabnew()
+        vim.cmd.term()
+        vim.cmd("startinsert")
+    end,
+    { noremap = true, silent = true })
+
 -- Trailing whitespaces
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*" },
@@ -100,4 +109,61 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
+-- File Explorer
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup({
+    view = {
+        side = "right"
+    }
+})
+vim.keymap.set('n', '<leader>b', ':NvimTreeFindFileToggle<CR>', {  noremap = true, silent = true  })
+
+-- Persistent Undo
+local undo_dir = vim.fn.stdpath('state') .. '/undo'
+if vim.fn.isdirectory(undo_dir) == 0 then
+  vim.fn.mkdir(undo_dir, 'p')
+end
+
+-- Configure persistent undo
+vim.opt.undodir = undo_dir
+vim.opt.undofile = true
+
+
+-- CMake
+vim.api.nvim_create_user_command('CMakeBuild',
+    function()
+        vim.cmd.vnew()
+        vim.cmd.term("cmake --build ./build --config Debug")
+        vim.cmd.wincmd("J")
+        vim.api.nvim_win_set_height(0, 5)
+    end,
+    {}
+)
+
+vim.api.nvim_create_user_command('CMakeTest',
+    function()
+        vim.cmd.vnew()
+        vim.cmd.term("cmake --build ./build --config Debug && ctest --test-dir ./build --output-on-failure")
+        vim.cmd.wincmd("J")
+        vim.api.nvim_win_set_height(0, 20)
+    end,
+    {}
+)
+
+-- Session Mgmt
+vim.api.nvim_create_user_command('SessionSave',
+    function()
+        vim.cmd(":mksession! $HOME/.config/nvim/session.vim")
+    end,
+    {}
+)
+
+vim.api.nvim_create_user_command('SessionLoad',
+    function()
+        vim.cmd(":source $HOME/.config/nvim/session.vim")
+    end,
+    {}
+)
 
