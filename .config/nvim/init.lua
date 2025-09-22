@@ -1,3 +1,35 @@
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
+    {"rebelot/kanagawa.nvim"},
+    {"neovim/nvim-lspconfig"},
+    {'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
+    {"tpope/vim-fugitive"},
+    {"nvim-tree/nvim-tree.lua"},
+    {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+  },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
+})
+
+
 vim.o.syntax = 'on'
 vim.o.compatible = false
 vim.o.signcolumn = 'yes'
@@ -33,6 +65,8 @@ vim.keymap.set('n', '<leader>o', ':source<CR>', { noremap = true, silent = true 
 -- LSP
 
 vim.lsp.enable('clangd')
+vim.lsp.enable('pyright')
+vim.lsp.enable('ruff')
 
 vim.cmd('set completeopt=fuzzy,menuone,popup,noselect')
 
