@@ -24,6 +24,7 @@ require("lazy").setup({
     {"tpope/vim-fugitive"},
     {"nvim-tree/nvim-tree.lua"},
     {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+    { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
   },
   -- automatically check for plugin updates
   checker = { enabled = true },
@@ -146,6 +147,8 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 -- File Explorer
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+require('lualine').setup()
 
 require("nvim-tree").setup({
     view = {
