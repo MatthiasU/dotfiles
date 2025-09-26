@@ -51,7 +51,7 @@ vim.o.splitbelow = true
 vim.o.swapfile = false
 vim.o.splitright = true
 vim.o.wildmenu = true
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 vim.opt.termguicolors = true
@@ -73,6 +73,7 @@ require("catppuccin").setup({
 })
 
 
+vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
 
 vim.cmd.colorscheme('catppuccin')
 
