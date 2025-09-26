@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {"rebelot/kanagawa.nvim"},
     {"neovim/nvim-lspconfig"},
     {'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
@@ -58,7 +59,21 @@ require('kanagawa').setup({
     transparent = true,
 })
 
-vim.cmd.colorscheme('kanagawa')
+require("catppuccin").setup({
+    flavour = "auto", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = true, -- disables setting the background color.
+    no_italic = false, -- Force no italic
+    no_bold = false, -- Force no bold
+    no_underline = false, -- Force no underline
+})
+
+
+
+vim.cmd.colorscheme('catppuccin')
 
 vim.keymap.set('n', '<leader>w', ':update<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>o', ':source<CR>', { noremap = true, silent = true })
