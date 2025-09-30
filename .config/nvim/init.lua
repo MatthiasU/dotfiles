@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    {"rebelot/kanagawa.nvim"},
     {"neovim/nvim-lspconfig"},
     {'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
     {"tpope/vim-fugitive"},
@@ -55,10 +54,6 @@ vim.o.hlsearch = true
 vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 vim.opt.termguicolors = true
-
-require('kanagawa').setup({
-    transparent = true,
-})
 
 require("catppuccin").setup({
     flavour = "auto", -- latte, frappe, macchiato, mocha
@@ -117,7 +112,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { noremap = true, silent = true })
--- vim.keymap.set('n', '<leader>ff', vim.lsp.buf.format)
 vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, { noremap = true, silent = true })
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true, silent = true })
