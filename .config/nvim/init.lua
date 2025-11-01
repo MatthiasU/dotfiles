@@ -7,7 +7,7 @@ require("config.dap")
 require("config.keybindings")
 require("config.terminal")
 require("config.telescope")
-require("config.nvimtree")
+-- require("config.nvimtree")
 require("config.cmake")
 require("config.session")
 
