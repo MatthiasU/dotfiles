@@ -2,6 +2,7 @@
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
 vim.lsp.enable('ruff')
+vim.lsp.enable('cmake')
 
 vim.cmd('set completeopt=fuzzy,menuone,popup,noselect')
 
