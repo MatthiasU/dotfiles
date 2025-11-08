@@ -7,17 +7,13 @@ require("config.dap")
 require("config.keybindings")
 require("config.terminal")
 require("config.telescope")
--- require("config.nvimtree")
 require("config.cmake")
 require("config.session")
+require("config.oil")
+require("config.lualine")
+require("config.neogit")
+require("config.gitsigns")
 
-require('lualine').setup()
-
--- Trailing whitespaces
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = { "*" },
-    command = [[%s/\s\+$//e]],
-})
 
 
 

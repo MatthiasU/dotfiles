@@ -23,11 +23,19 @@ require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {"neovim/nvim-lspconfig"},
     {'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
-    {"tpope/vim-fugitive"},
-    {"nvim-tree/nvim-tree.lua"},
     {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
     { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
     { "mfussenegger/nvim-dap" },
+    { "stevearc/oil.nvim" },
+    {
+      "NeogitOrg/neogit",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim",
+        "nvim-telescope/telescope.nvim",
+      },
+    },
+    { "lewis6991/gitsigns.nvim" },
   },
   checker = { enabled = true },
 })
