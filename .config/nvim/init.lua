@@ -14,6 +14,3 @@ require("config.lualine")
 require("config.neogit")
 require("config.gitsigns")
 
-
-
-
