@@ -1,4 +1,3 @@
-
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>st',
     function()
@@ -17,5 +16,3 @@ vim.keymap.set('n', '<leader>tt',
         vim.cmd("startinsert")
     end,
     { noremap = true, silent = true })
-
-

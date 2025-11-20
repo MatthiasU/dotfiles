@@ -1,4 +1,3 @@
-
 vim.o.syntax = 'on'
 vim.o.compatible = false
 vim.o.signcolumn = 'yes'
@@ -25,12 +24,9 @@ vim.opt.termguicolors = true
 -- Persistent Undo
 local undo_dir = vim.fn.stdpath('state') .. '/undo'
 if vim.fn.isdirectory(undo_dir) == 0 then
-  vim.fn.mkdir(undo_dir, 'p')
+    vim.fn.mkdir(undo_dir, 'p')
 end
-
 
 -- Configure persistent undo
 vim.opt.undodir = undo_dir
 vim.opt.undofile = true
-
-

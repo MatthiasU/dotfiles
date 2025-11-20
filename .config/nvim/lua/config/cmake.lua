@@ -1,4 +1,3 @@
-
 vim.api.nvim_create_user_command('CMakeBuild',
     function()
         vim.cmd.term("cmake --build ./build --config Debug")

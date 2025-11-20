@@ -1,4 +1,3 @@
-
 vim.api.nvim_create_user_command('SessionSave',
     function()
         vim.cmd(":mksession! $HOME/.config/nvim/session.vim")
@@ -12,4 +11,3 @@ vim.api.nvim_create_user_command('SessionLoad',
     end,
     {}
 )
-
