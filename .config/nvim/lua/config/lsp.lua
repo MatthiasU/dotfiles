@@ -1,4 +1,3 @@
-
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
 vim.lsp.enable('cmake')
@@ -45,11 +44,21 @@ vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { noremap = true, silen
 
 vim.keymap.set('i', 'cr', vim.lsp.formatexpr, { noremap = true, silent = true })
 vim.keymap.set('i', '<CR>', function()
-  if vim.fn.pumvisible() == 1 then
-    return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
-  else
-    return vim.api.nvim_replace_termcodes('<CR>', true, true, true)
-  end
+    if vim.fn.pumvisible() == 1 then
+        return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
+    else
+        return vim.api.nvim_replace_termcodes('<CR>', true, true, true)
+    end
 end, { expr = true, noremap = true })
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[%s/\s\+$//e]] })
+
+vim.lsp.config('lua_ls', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' },
+            },
+        },
+    },
+})
