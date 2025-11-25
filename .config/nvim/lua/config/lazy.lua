@@ -28,15 +28,8 @@ require("lazy").setup({
         { "mfussenegger/nvim-dap" },
         { "stevearc/oil.nvim" },
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-        {
-            "NeogitOrg/neogit",
-            dependencies = {
-                "nvim-lua/plenary.nvim",
-                "sindrets/diffview.nvim",
-                "nvim-telescope/telescope.nvim",
-            },
-        },
         { "lewis6991/gitsigns.nvim" },
+        { "tpope/vim-fugitive" },
     },
     checker = { enabled = true },
 })

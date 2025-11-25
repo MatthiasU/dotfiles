@@ -1,4 +1,3 @@
-
 require("config.lazy")
 require("config.settings")
 require("config.colorscheme")
@@ -11,6 +10,5 @@ require("config.cmake")
 require("config.session")
 require("config.oil")
 require("config.lualine")
-require("config.neogit")
+require("config.fugitive")
 require("config.gitsigns")
-
