@@ -9,3 +9,5 @@ vim.g.fzf_action = {
     ['ctrl-x'] = 'split',
     ['ctrl-v'] = 'vsplit',
 }
+
+vim.g.fzf_layout = { down = '40%' }
