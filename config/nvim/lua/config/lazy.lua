@@ -20,15 +20,14 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
     spec = {
-        { "catppuccin/nvim",                          name = "catppuccin",                             priority = 1000 },
+        { "catppuccin/nvim",                 name = "catppuccin",                             priority = 1000 },
         { "neovim/nvim-lspconfig" },
-        { 'nvim-telescope/telescope.nvim',            tag = '0.1.8',                                   dependencies = { 'nvim-lua/plenary.nvim' } },
-        { "nvim-treesitter/nvim-treesitter",          branch = 'master',                               lazy = false,                              build = ":TSUpdate" },
-        { 'nvim-lualine/lualine.nvim',                dependencies = { 'nvim-tree/nvim-web-devicons' } },
+        { "nvim-treesitter/nvim-treesitter", branch = 'master',                               lazy = false,   build = ":TSUpdate" },
+        { 'nvim-lualine/lualine.nvim',       dependencies = { 'nvim-tree/nvim-web-devicons' } },
         { "mfussenegger/nvim-dap" },
         { "stevearc/oil.nvim" },
-        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         { "lewis6991/gitsigns.nvim" },
+        { "junegunn/fzf.vim",                dependencies = { "junegunn/fzf" } },
         { "tpope/vim-fugitive" },
     },
     checker = { enabled = true },
