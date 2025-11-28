@@ -30,3 +30,5 @@ end
 -- Configure persistent undo
 vim.opt.undodir = undo_dir
 vim.opt.undofile = true
+
+vim.o.clipboard = "unnamedplus"
