@@ -29,6 +29,7 @@ require("lazy").setup({
         { "lewis6991/gitsigns.nvim" },
         { "junegunn/fzf.vim",                dependencies = { "junegunn/fzf" } },
         { "tpope/vim-fugitive" },
+        { "rose-pine/neovim" },
     },
     checker = { enabled = true },
 })
