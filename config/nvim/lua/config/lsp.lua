@@ -43,7 +43,6 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true })
 vim.keymap.set('n', 'gq', vim.lsp.formatexpr, { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
-vim.keymap.set('i', 'cr', vim.lsp.formatexpr, { noremap = true, silent = true })
 vim.keymap.set('i', '<CR>', function()
     if vim.fn.pumvisible() == 1 then
         return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
