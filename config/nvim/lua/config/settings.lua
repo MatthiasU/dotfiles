@@ -20,3 +20,7 @@ vim.o.hlsearch = true
 vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 vim.opt.termguicolors = true
+
+vim.api.nvim_create_user_command('ClearQuickFix', function()
+    vim.fn.setqflist({}, 'r')
+end, { desc = 'Clear the quickfix list' })
