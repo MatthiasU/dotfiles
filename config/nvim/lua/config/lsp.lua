@@ -43,6 +43,18 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true })
 vim.keymap.set('n', 'gq', vim.lsp.formatexpr, { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
+vim.api.nvim_create_user_command('LspQuickFix', function()
+    vim.diagnostic.setqflist()
+end, { desc = 'Send LSP errors & warnings to quickfix list' })
+
+vim.api.nvim_create_user_command('LspQuickFixErrors', function()
+    vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })
+end, { desc = 'Send LSP errors to quickfix list' })
+
+vim.api.nvim_create_user_command('LspQuickFixWarnings', function()
+    vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARNING })
+end, { desc = 'Send LSP warnings to quickfix list' })
+
 vim.keymap.set('i', '<CR>', function()
     if vim.fn.pumvisible() == 1 then
         return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
