@@ -30,6 +30,7 @@ require("lazy").setup({
         { "junegunn/fzf.vim",                dependencies = { "junegunn/fzf" } },
         { "tpope/vim-fugitive" },
         { "rose-pine/neovim" },
+        { "neanias/everforest-nvim" },
     },
     checker = { enabled = true },
 })

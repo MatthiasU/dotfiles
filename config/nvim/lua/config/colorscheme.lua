@@ -29,4 +29,10 @@ require("rose-pine").setup({
     },
 })
 
-vim.cmd.colorscheme('rose-pine')
+require("everforest").setup(
+    {
+        transparent_background_level = 1,
+    })
+
+
+vim.cmd.colorscheme('everforest')
