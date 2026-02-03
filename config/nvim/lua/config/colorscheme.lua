@@ -35,4 +35,4 @@ require("everforest").setup(
     })
 
 
-vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('rose-pine')
