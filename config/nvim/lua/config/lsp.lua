@@ -55,6 +55,12 @@ vim.api.nvim_create_user_command('LspQuickFixWarnings', function()
     vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARNING })
 end, { desc = 'Send LSP warnings to quickfix list' })
 
+vim.api.nvim_create_user_command('LspFormat', function()
+    vim.lsp.buf.format()
+end, { desc = 'Format open buffer' })
+
+
+
 vim.keymap.set('i', '<CR>', function()
     if vim.fn.pumvisible() == 1 then
         return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
