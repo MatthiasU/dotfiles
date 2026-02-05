@@ -1,8 +1,9 @@
 vim.lsp.enable('clangd')
-vim.lsp.enable('pyright')
 vim.lsp.enable('pyrefly')
+vim.lsp.enable('ruff')
 vim.lsp.enable('cmake')
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('marksman')
 
 vim.cmd('set completeopt=fuzzy,menuone,popup,noselect')
 
