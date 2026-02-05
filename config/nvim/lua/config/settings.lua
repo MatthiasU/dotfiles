@@ -20,6 +20,8 @@ vim.o.hlsearch = true
 vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 vim.opt.termguicolors = true
+vim.opt.spelllang = { 'en_us', 'de' }
+vim.opt.spell = true
 
 vim.api.nvim_create_user_command('ClearQuickFix', function()
     vim.fn.setqflist({}, 'r')
