@@ -1,6 +1,16 @@
 
 
 font-family="Hack Nerd Font"
-font-size=15
+font-size=13
 background-opacity=1.0
-theme="Rose pine"
+theme = dark:Catppuccin Frappe,light:Catppuccin Latte
+
+# Split Navigation (Prefix Ctrl+a)
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>j=goto_split:down
+keybind = ctrl+a>k=goto_split:up
+keybind = ctrl+a>l=goto_split:right
+
+# Optional: Common split creation binds
+keybind = ctrl+a>v=new_split:right
+keybind = ctrl+a>s=new_split:down
