@@ -27,16 +27,21 @@ vim.keymap.set('n', '<Leader>do', function() require('dap').step_out() end, { no
 vim.keymap.set('n', '<Leader>dt', function() require('dap').terminate() end, { noremap = true, silent = true })
 
 dap.configurations.cpp = {
-    name = "Launch Executable",
-    type = "lldb",
-    request = "launch",
-    program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
-    cwd = '${workspaceFolder}',
-    stopOnEntry = false,
-    args = {},
+    {
+        name = "Launch Executable",
+        type = "lldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+    },
 }
+
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
 
 dap.configurations.python = {
     {
