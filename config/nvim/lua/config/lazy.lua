@@ -20,9 +20,9 @@ vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
     spec = {
-        { "catppuccin/nvim",                 name = "catppuccin",                             priority = 1000 },
+        { "catppuccin/nvim",                 name = "catppuccin",                              priority = 1000 },
         { "neovim/nvim-lspconfig" },
-        { "nvim-treesitter/nvim-treesitter", branch = 'master',                               lazy = false,   build = ":TSUpdate" },
+        { "nvim-treesitter/nvim-treesitter", branch = 'master',                                lazy = false,   build = ":TSUpdate" },
         { 'nvim-lualine/lualine.nvim',       dependencies = { 'nvim-tree/nvim-web-devicons' } },
         { "mfussenegger/nvim-dap" },
         { "stevearc/oil.nvim" },
@@ -31,6 +31,7 @@ require("lazy").setup({
         { "tpope/vim-fugitive" },
         { "rose-pine/neovim" },
         { "neanias/everforest-nvim" },
+        { 'nvim-tree/nvim-tree.lua',         dependencies = { 'nvim-tree/nvim-web-devicons' }, lazy = false },
     },
     checker = { enabled = true },
 })
