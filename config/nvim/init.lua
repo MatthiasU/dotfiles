@@ -1,4 +1,4 @@
-require("config.lazy")
+require("config.packages")
 require("config.settings")
 require("config.colorscheme")
 require("config.lsp")

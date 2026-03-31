@@ -1,38 +1,18 @@
-require("catppuccin").setup({
-    flavour = "auto", -- latte, frappe, macchiato, mocha
-    background = {    -- :h background
-        light = "latte",
-        dark = "mocha",
-    },
-    transparent_background = true, -- disables setting the background color.
-    no_italic = false,             -- Force no italic
-    no_bold = false,               -- Force no bold
-    no_underline = false,          -- Force no underline
-})
-
-require("rose-pine").setup({
-    variant = "auto",      -- auto, main, moon, or dawn
-    dark_variant = "main", -- main, moon, or dawn
-    dim_inactive_windows = false,
-    extend_background_behind_borders = true,
-
-    enable = {
-        terminal = true,
-        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-        migrations = true,        -- Handle deprecated options automatically
-    },
-
-    styles = {
-        bold = true,
-        italic = true,
-        transparency = true,
+require('kanagawa').setup({
+    undercurl = true, -- enable undercurls
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true },
+    statementStyle = { bold = true },
+    typeStyle = {},
+    transparent = false,   -- do not set background color
+    dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true, -- define vim.g.terminal_color_{0,17}
+    theme = "wave",        -- Load "wave" theme
+    background = {         -- map the value of 'background' option to a theme
+        dark = "wave",     -- try "dragon" !
+        light = "lotus"
     },
 })
 
-require("everforest").setup(
-    {
-        transparent_background_level = 1,
-    })
-
-
-vim.cmd.colorscheme('catppuccin-mocha')
+vim.cmd.colorscheme('kanagawa')
