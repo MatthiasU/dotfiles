@@ -3,7 +3,7 @@
 font-family="Hack Nerd Font"
 font-size=13
 background-opacity=1.0
-theme = dark:Catppuccin Frappe,light:Catppuccin Latte
+theme = Kanagawa Wave
 
 # Split Navigation (Prefix Ctrl+a)
 #keybind = ctrl+a>h=goto_split:left
