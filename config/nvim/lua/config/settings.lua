@@ -26,6 +26,11 @@ vim.opt.autocomplete = true
 vim.opt.pumborder = 'rounded'
 vim.opt.pummaxwidth = 80
 
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 vim.api.nvim_create_user_command('ClearQuickFix', function()
     vim.fn.setqflist({}, 'r')
