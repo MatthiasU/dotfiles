@@ -1,5 +1,5 @@
 vim.keymap.set('n', '<c-p>', ':GFiles<CR>', { desc = 'find git files' })
-vim.keymap.set('n', '<leader>p', ':Files<CR>', { desc = 'find git files' })
+vim.keymap.set('n', '<leader>p', ':Files<CR>', { desc = 'find files' })
 vim.keymap.set('n', '<leader>fg', ':Rg<CR>', { desc = 'live grep' })
 vim.keymap.set('n', '<c-b>', ':Buffers<CR>', { desc = 'buffers' })
 vim.keymap.set('n', '<c-s>', ':BLines<CR>', { desc = 'search in file' })
