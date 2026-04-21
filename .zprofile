@@ -7,4 +7,5 @@ if [ -d ".venv" ] && [ -f ".venv/bin/activate" ]; then
 fi
 
 export dotfiles="$HOME/Developer/dotfiles"
-
+export EDITOR='nvim'
+export VISUAL='nvim'
