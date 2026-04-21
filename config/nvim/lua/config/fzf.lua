@@ -23,4 +23,4 @@ vim.g.fzf_action = {
     ['ctrl-v'] = 'vsplit',
 }
 
-vim.g.fzf_layout = { down = '40%' }
+vim.g.fzf_layout = { window = { width = 0.8, height = 0.5, xoffset = 0.5 } }
