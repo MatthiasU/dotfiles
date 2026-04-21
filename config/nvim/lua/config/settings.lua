@@ -21,6 +21,11 @@ vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 vim.opt.termguicolors = true
 vim.opt.spell = false
+vim.opt.completeopt = 'menu,popup,menuone,noselect,noinsert,preview'
+vim.opt.autocomplete = true
+vim.opt.pumborder = 'rounded'
+vim.opt.pummaxwidth = 80
+
 
 vim.api.nvim_create_user_command('ClearQuickFix', function()
     vim.fn.setqflist({}, 'r')

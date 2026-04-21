@@ -5,8 +5,6 @@ vim.lsp.enable('cmake')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('marksman')
 
-vim.cmd('set completeopt=fuzzy,menuone,popup,noselect')
-
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp', {}),
     callback = function(args)
