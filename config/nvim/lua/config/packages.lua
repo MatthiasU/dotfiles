@@ -11,3 +11,6 @@ vim.pack.add({
     "https://github.com/rebelot/kanagawa.nvim",
     "https://github.com/nvim-tree/nvim-tree.lua",
 }, { load = true })
+
+vim.cmd.packadd('nvim.undotree')
+vim.cmd.packadd('nvim.difftool')
