@@ -1,9 +1,11 @@
-vim.lsp.enable('clangd')
-vim.lsp.enable('pyrefly')
-vim.lsp.enable('ruff')
-vim.lsp.enable('cmake')
+require("mason").setup()
+
 vim.lsp.enable('lua_ls')
-vim.lsp.enable('marksman')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('vue_ls')
+vim.lsp.enable('html')
+vim.lsp.enable('tailwindcss')
+vim.lsp.enable('gopls')
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp', {}),
@@ -13,14 +15,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
-vim.keymap.set('i', '<C-space>', function()
-    vim.lsp.completion.get()
-end)
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
-        -- Only create the format autocmd if the client supports formatting
         if client:supports_method('textDocument/formatting') then
             vim.api.nvim_create_autocmd('BufWritePre', {
                 buffer = args.buf,
@@ -31,16 +29,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
     end,
 })
-
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { noremap = true, silent = true })
-vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, { noremap = true, silent = true })
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true, silent = true })
-vim.keymap.set('n', 'gn', vim.lsp.buf.rename, { noremap = true, silent = true })
-vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { noremap = true, silent = true })
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true })
-vim.keymap.set('n', 'gq', vim.lsp.formatexpr, { noremap = true, silent = true })
-vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
 vim.api.nvim_create_user_command('LspQuickFix', function()
     vim.diagnostic.setqflist()
@@ -58,16 +46,6 @@ vim.api.nvim_create_user_command('LspFormat', function()
     vim.lsp.buf.format()
 end, { desc = 'Format open buffer' })
 
-
-
-vim.keymap.set('i', '<CR>', function()
-    if vim.fn.pumvisible() == 1 then
-        return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
-    else
-        return vim.api.nvim_replace_termcodes('<CR>', true, true, true)
-    end
-end, { expr = true, noremap = true })
-
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*" }, command = [[%s/\s\+$//e]] })
 
 vim.lsp.config('lua_ls', {
@@ -79,3 +57,26 @@ vim.lsp.config('lua_ls', {
         },
     },
 })
+
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { noremap = true, silent = true })
+vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, { noremap = true, silent = true })
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true, silent = true })
+vim.keymap.set('n', 'gn', vim.lsp.buf.rename, { noremap = true, silent = true })
+vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { noremap = true, silent = true })
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true })
+vim.keymap.set('n', 'gq', vim.lsp.formatexpr, { noremap = true, silent = true })
+vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
+
+vim.keymap.set('i', '<C-space>', function()
+    vim.lsp.completion.get()
+end)
+
+
+vim.keymap.set('i', '<CR>', function()
+    if vim.fn.pumvisible() == 1 then
+        return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
+    else
+        return vim.api.nvim_replace_termcodes('<CR>', true, true, true)
+    end
+end, { expr = true, noremap = true })

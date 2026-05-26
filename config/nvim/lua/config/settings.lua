@@ -22,7 +22,7 @@ vim.g.netrw_liststyle = 3
 vim.opt.termguicolors = true
 vim.opt.spell = false
 vim.opt.completeopt = 'menu,popup,menuone,noselect,noinsert,preview'
-vim.opt.autocomplete = true
+vim.opt.autocomplete = false
 vim.opt.pumborder = 'rounded'
 vim.opt.pummaxwidth = 80
 
@@ -31,6 +31,11 @@ vim.o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+vim.opt.spell = false
+vim.opt.spelllang = { 'en_us', 'de' }
+
+vim.o.clipboard = "unnamedplus"
 
 vim.api.nvim_create_user_command('ClearQuickFix', function()
     vim.fn.setqflist({}, 'r')

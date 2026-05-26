@@ -1,9 +1,4 @@
-vim.keymap.set('n', '<c-p>', ':GFiles<CR>', { desc = 'find git files' })
-vim.keymap.set('n', '<leader>p', ':Files<CR>', { desc = 'find files' })
-vim.keymap.set('n', '<leader>fg', ':Rg<CR>', { desc = 'live grep' })
-vim.keymap.set('n', '<c-b>', ':Buffers<CR>', { desc = 'buffers' })
-vim.keymap.set('n', '<c-s>', ':BLines<CR>', { desc = 'search in file' })
-
+require("fzf-lua").setup()
 
 local function build_quickfix_list(lines)
     vim.fn.setqflist(
@@ -24,3 +19,9 @@ vim.g.fzf_action = {
 }
 
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.5, xoffset = 0.5 } }
+
+vim.keymap.set('n', '<leader>ff', ':FzfLua global<CR>', { desc = 'find git files' })
+vim.keymap.set('n', '<leader>fb', ':FzfLua buffers<CR>', { desc = 'buffers' })
+vim.keymap.set('n', '<leader>fl', ':FzfLua blines<CR>', { desc = 'search in file' })
+
+vim.keymap.set('n', '<leader>sh', ':FzfLua helptags<CR>', { desc = 'search in file' })
