@@ -1,11 +1,6 @@
 require("mason").setup()
 
 vim.lsp.enable('lua_ls')
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('vue_ls')
-vim.lsp.enable('html')
-vim.lsp.enable('tailwindcss')
-vim.lsp.enable('gopls')
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp', {}),
@@ -14,7 +9,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
     end,
 })
-
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
