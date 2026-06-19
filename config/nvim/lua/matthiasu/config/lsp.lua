@@ -33,7 +33,7 @@ vim.api.nvim_create_user_command('LspQuickFixErrors', function()
 end, { desc = 'Send LSP errors to quickfix list' })
 
 vim.api.nvim_create_user_command('LspQuickFixWarnings', function()
-    vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARNING })
+    vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARN })
 end, { desc = 'Send LSP warnings to quickfix list' })
 
 vim.api.nvim_create_user_command('LspFormat', function()
