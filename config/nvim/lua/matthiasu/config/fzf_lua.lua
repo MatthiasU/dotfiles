@@ -7,6 +7,8 @@ fzf_lua.setup({
     },
 })
 
+fzf_lua.register_ui_select()
+
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.5, xoffset = 0.5 } }
 
 vim.keymap.set('n', '<leader>ff', function() fzf_lua.global() end, { desc = 'Find Files' })
