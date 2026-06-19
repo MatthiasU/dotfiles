@@ -1,7 +1,5 @@
 require("mason").setup()
 
-vim.lsp.enable('lua_ls')
-
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp', {}),
     callback = function(args)
@@ -79,3 +77,9 @@ vim.keymap.set('i', '<CR>', function()
         return vim.api.nvim_replace_termcodes('<CR>', true, true, true)
     end
 end, { expr = true, noremap = true })
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('superhtml')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('clangd')
+vim.lsp.enable('cmake')
