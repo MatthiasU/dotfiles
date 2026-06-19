@@ -21,7 +21,6 @@ vim.g.mapleader = ' '
 vim.g.netrw_liststyle = 3
 vim.opt.termguicolors = true
 vim.opt.spell = false
-vim.opt.completeopt = 'menu,popup,menuone,noselect,noinsert,preview'
 vim.opt.autocomplete = false
 vim.opt.pumborder = 'rounded'
 vim.opt.pummaxwidth = 80

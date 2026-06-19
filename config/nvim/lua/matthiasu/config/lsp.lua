@@ -79,18 +79,10 @@ vim.keymap.set('i', '<C-space>', function()
     vim.lsp.completion.get()
 end)
 
-
-vim.keymap.set('i', '<CR>', function()
-    if vim.fn.pumvisible() == 1 then
-        return vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
-    else
-        return vim.api.nvim_replace_termcodes('<CR>', true, true, true)
-    end
-end, { expr = true, noremap = true })
+vim.opt.completeopt = 'menu,menuone,noinsert,popup,fuzzy,preview'
 
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('superhtml')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('clangd')
 vim.lsp.enable('cmake')
-
