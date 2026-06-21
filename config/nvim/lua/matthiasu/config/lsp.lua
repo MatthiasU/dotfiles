@@ -60,21 +60,6 @@ vim.api.nvim_create_user_command('LspFormat', function()
     vim.lsp.buf.format()
 end, { desc = 'Format open buffer' })
 
-vim.lsp.config('lua_ls', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' },
-            },
-            workspace = {
-                checkThirdParty = false,
-                library = { vim.env.VIMRUNTIME },
-            },
-
-        },
-    },
-})
-
 vim.keymap.set('i', '<C-space>', function()
     vim.lsp.completion.get()
 end)
