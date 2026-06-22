@@ -5,9 +5,10 @@ fzf_lua.setup({
             ["ctrl-q"] = "select-all+accept",
         }
     },
+    opts = {
+        ui_select = true
+    }
 })
-
-fzf_lua.register_ui_select()
 
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.5, xoffset = 0.5 } }
 
