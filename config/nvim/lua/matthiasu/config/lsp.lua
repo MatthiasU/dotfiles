@@ -66,6 +66,10 @@ end)
 
 vim.opt.completeopt = 'menu,menuone,noinsert,popup,fuzzy,preview'
 
+vim.keymap.set('i', '<CR>', function()
+  return vim.fn.pumvisible() ~= 0 and '<C-y>' or '<CR>'
+end, { expr = true })
+
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('superhtml')
 vim.lsp.enable('rust_analyzer')
