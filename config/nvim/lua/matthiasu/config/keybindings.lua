@@ -8,3 +8,6 @@ vim.keymap.set('n', '<leader>o', ':source<CR>', opts)
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', opts)
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', opts)
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+
