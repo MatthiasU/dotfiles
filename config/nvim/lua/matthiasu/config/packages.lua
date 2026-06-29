@@ -10,6 +10,9 @@ vim.pack.add({
     "https://github.com/rebelot/kanagawa.nvim",
     "https://github.com/nvim-tree/nvim-tree.lua",
     "https://github.com/mason-org/mason.nvim",
+    "https://github.com/nvim-neotest/nvim-nio",
+    "https://github.com/rcarriga/nvim-dap-ui",
+    { src = 'https://github.com/mrcjkb/rustaceanvim', version = vim.version.range('^9') },
 }, { load = true })
 
 vim.cmd.packadd('nvim.undotree')
