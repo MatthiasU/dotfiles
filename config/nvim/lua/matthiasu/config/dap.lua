@@ -81,6 +81,6 @@ dap.listeners.before.event_exited.dapui_config = function()
     dapui.close()
 end
 
-vim.keymap.set("n", "<leader>du", function() require("dapui").toggle() end, { desc = "Toggle DAP UI" })
+vim.keymap.set("n", "<leader>du", function() require("dapui").toggle({ reset = true }) end, { desc = "Toggle DAP UI" })
 vim.keymap.set('n', '<leader>dh', function() require('dap.ui.widgets').hover() end, { desc = 'Debug Hover' })
 vim.keymap.set('n', '<leader>de', function() require('dapui').eval() end, { desc = 'Debug Evaluate' })
