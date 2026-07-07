@@ -72,7 +72,6 @@ end, { expr = true })
 
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('superhtml')
-vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('clangd')
 vim.lsp.enable('cmake')
 vim.lsp.enable('ruff')
