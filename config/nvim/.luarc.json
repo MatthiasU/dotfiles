@@ -5,6 +5,7 @@
     "vim"
   ],
   "workspace.library": [
-    "$VIMRUNTIME/lua"
+    "$VIMRUNTIME/lua",
+    "${3rd}/luv/library"
   ]
 }
