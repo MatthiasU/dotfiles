@@ -14,4 +14,3 @@ term.setup(
     })
 
 vim.keymap.set('n', '<leader>tt', ":ToggleTerm<CR>", { noremap = true, silent = true })
-vim.keymap.set('t', '<leader>tt', '<C-\\><C-n> :ToggleTerm<CR>', { noremap = true, silent = true })
