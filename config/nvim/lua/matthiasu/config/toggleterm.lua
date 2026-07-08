@@ -3,7 +3,6 @@ vim.pack.add({ "https://github.com/akinsho/toggleterm.nvim" })
 local term = require("toggleterm")
 term.setup(
     {
-        direction = 'float',
         highlights = {
             Normal = {
                 link = 'Normal',
