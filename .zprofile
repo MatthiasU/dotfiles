@@ -6,6 +6,6 @@ if [ -d ".venv" ] && [ -f ".venv/bin/activate" ]; then
   source .venv/bin/activate
 fi
 
-export dotfiles="$HOME/Developer/dotfiles"
+alias dotfiles="cd $HOME/Developer/dotfiles"
 export EDITOR='nvim'
 export VISUAL='nvim'
