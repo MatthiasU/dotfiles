@@ -5,6 +5,12 @@ fzf_lua.setup({
             ["ctrl-q"] = "select-all+accept",
         }
     },
+    fzf_opts = {
+        ["--tiebreak"] = "begin,length",
+    },
+    files = {
+        tier1_sort = "oldfiles",
+    },
     ui_select = true
 })
 
