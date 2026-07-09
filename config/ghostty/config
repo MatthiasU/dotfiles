@@ -1,4 +1,5 @@
 
+keybind = super+,=text:ghostty +edit-config\n
 
 font-family="JetBrains Mono"
 font-thicken = true
