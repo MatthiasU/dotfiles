@@ -16,7 +16,7 @@ fzf_lua.setup({
 
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.5, xoffset = 0.5 } }
 
-vim.keymap.set('n', '<leader>ff', function() fzf_lua.global() end, { desc = 'Find Files' })
+vim.keymap.set('n', '<leader>ff', function() fzf_lua.files() end, { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>fb', function() fzf_lua.buffers() end, { desc = 'Find Buffers' })
 vim.keymap.set('n', '<leader>fl', function() fzf_lua.blines() end, { desc = 'Search in file' })
 vim.keymap.set('n', '<leader>fm', function() fzf_lua.marks() end, { desc = 'Find marks' })
