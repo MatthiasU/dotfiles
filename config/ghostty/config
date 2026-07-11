@@ -1,6 +1,6 @@
 
 keybind = super+,=text:ghostty +edit-config\n
-
+macos-option-as-alt = false
 font-family="JetBrains Mono"
 font-thicken = true
 font-size=14
