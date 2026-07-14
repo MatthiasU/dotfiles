@@ -13,6 +13,7 @@ vim.pack.add({
     "https://github.com/nvim-neotest/nvim-nio",
     "https://github.com/rcarriga/nvim-dap-ui",
     { src = 'https://github.com/mrcjkb/rustaceanvim', version = vim.version.range('^9') },
+    "https://github.com/folke/tokyonight.nvim",
 }, { load = true })
 
 vim.cmd.packadd('nvim.undotree')
