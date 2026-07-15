@@ -12,3 +12,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set('n', '<C-n>', ':cnext<CR>', { desc = 'Next Quickfix item' })
+vim.keymap.set('n', '<C-p>', ':cprev<CR>', { desc = 'Previous Quickfix item' })
