@@ -8,9 +8,7 @@ fzf_lua.setup({
     },
     fzf_opts = {
         ["--tiebreak"] = "begin,length",
-    },
-    files = {
-        tier1_sort = "oldfiles",
+        ["--history"] = vim.fn.stdpath("data") .. "/fzf_history",
     },
     ui_select = true
 })
