@@ -77,6 +77,7 @@ vim.lsp.enable('cmake')
 vim.lsp.enable('ruff')
 vim.lsp.enable('pyrefly')
 vim.lsp.enable('starpls')
+vim.lsp.enable('bashls')
 
 vim.diagnostic.config({
     severity_sort = true,
