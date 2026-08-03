@@ -1,5 +1,6 @@
 local fzf_lua = require("fzf-lua")
 fzf_lua.setup({
+    "ivy",
     keymap = {
         fzf = {
             ["ctrl-q"] = "select-all+accept",
@@ -13,8 +14,6 @@ fzf_lua.setup({
     },
     ui_select = true
 })
-
-vim.g.fzf_layout = { window = { width = 0.8, height = 0.5, xoffset = 0.5 } }
 
 vim.keymap.set('n', '<leader>ff', function() fzf_lua.files() end, { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>fb', function() fzf_lua.buffers() end, { desc = 'Find Buffers' })
