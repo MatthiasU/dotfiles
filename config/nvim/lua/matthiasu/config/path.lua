@@ -60,6 +60,6 @@ vim.api.nvim_create_user_command(
     }
 )
 
-vim.keymap.set('n', '<leader>cp', ':copypath<cr>', { desc = 'copypath' })
-vim.keymap.set('n', '<leader>cp', ':copyrelpath<cr>', { desc = 'copyrelativepath' })
-vim.keymap.set('n', '<leader>cf', ":CopyFileName<cr>", { desc = 'copy file name' })
+vim.keymap.set('n', '<leader>cp', ':CopyPath<CR>', { desc = 'copy absolute path' })
+vim.keymap.set('n', '<leader>cP', ':CopyRelPath<CR>', { desc = 'copy relative path' })
+vim.keymap.set('n', '<leader>cf', ":CopyFileName<CR>", { desc = 'copy file name' })
