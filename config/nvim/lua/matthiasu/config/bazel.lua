@@ -22,11 +22,8 @@ local function copy_bazel_target_under_cursor()
         return
     end
 
-    -- 3. Compute relative package path
     local package_dir = vim.fs.dirname(build_file)
     local relative_pkg = vim.fs.relpath(workspace_root, package_dir) or ""
-
-    -- 4. Format and copy to system clipboard
     local full_target = (relative_pkg == "") and ("//" .. target_name) or ("//" .. relative_pkg .. ":" .. target_name)
 
     vim.fn.setreg("+", full_target)
