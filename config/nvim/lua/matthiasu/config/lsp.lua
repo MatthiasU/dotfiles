@@ -70,6 +70,17 @@ vim.keymap.set('i', '<CR>', function()
     return vim.fn.pumvisible() ~= 0 and '<C-y>' or '<CR>'
 end, { expr = true })
 
+vim.lsp.config("clangd", {
+    cmd = {
+        "clangd",
+        "--enable-config",
+        "-j=4",
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+    },
+})
+
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('superhtml')
 vim.lsp.enable('clangd')
