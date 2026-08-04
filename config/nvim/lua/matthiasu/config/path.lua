@@ -38,5 +38,28 @@ vim.api.nvim_create_user_command(
     }
 )
 
-vim.keymap.set('n', '<leader>cp', ':CopyPath<CR>', { desc = 'CopyPath' })
-vim.keymap.set('n', '<leader>cP', ':CopyRelPath<CR>', { desc = 'CopyRelativePath' })
+function CopyFileName(opts)
+    -- default to unnamed register (+) if no argument is provided
+    local register = (opts.args ~= "") and opts.args or '+'
+    local file_name = vim.fn.expand('%:t')
+    if file_name ~= "" then
+        vim.fn.setreg(register, file_name)
+        vim.notify("file name copied to register [" .. register .. "]: " .. file_name, vim.log.levels.INFO)
+    else
+        vim.notify("could not determine file name", vim.log.levels.WARN)
+    end
+end
+
+-- create the user command :CopyFileName
+vim.api.nvim_create_user_command(
+    'CopyFileName',
+    CopyFileName,
+    {
+        nargs = '?',
+        desc = 'copy relative path to specified register (defaults to +)'
+    }
+)
+
+vim.keymap.set('n', '<leader>cp', ':copypath<cr>', { desc = 'copypath' })
+vim.keymap.set('n', '<leader>cp', ':copyrelpath<cr>', { desc = 'copyrelativepath' })
+vim.keymap.set('n', '<leader>cf', ":CopyFileName<cr>", { desc = 'copy file name' })
