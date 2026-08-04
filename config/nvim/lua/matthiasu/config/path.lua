@@ -39,7 +39,6 @@ vim.api.nvim_create_user_command(
 )
 
 function CopyFileName(opts)
-    -- default to unnamed register (+) if no argument is provided
     local register = (opts.args ~= "") and opts.args or '+'
     local file_name = vim.fn.expand('%:t')
     if file_name ~= "" then
@@ -50,7 +49,6 @@ function CopyFileName(opts)
     end
 end
 
--- create the user command :CopyFileName
 vim.api.nvim_create_user_command(
     'CopyFileName',
     CopyFileName,
