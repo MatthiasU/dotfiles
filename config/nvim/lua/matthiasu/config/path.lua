@@ -37,3 +37,6 @@ vim.api.nvim_create_user_command(
         desc = 'Copy relative path to specified register (defaults to +)'
     }
 )
+
+vim.keymap.set('n', '<leader>cp', ':CopyPath<CR>', { desc = 'CopyPath' })
+vim.keymap.set('n', '<leader>cP', ':CopyRelPath<CR>', { desc = 'CopyRelativePath' })
