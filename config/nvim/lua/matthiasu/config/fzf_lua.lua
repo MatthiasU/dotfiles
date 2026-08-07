@@ -1,6 +1,5 @@
 local fzf_lua = require("fzf-lua")
 fzf_lua.setup({
-    "ivy",
     keymap = {
         fzf = {
             ["ctrl-q"] = "select-all+accept",
