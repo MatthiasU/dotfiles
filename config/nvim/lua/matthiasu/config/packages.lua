@@ -8,7 +8,6 @@ vim.pack.add({
     "https://github.com/ibhagwan/fzf-lua",
     "https://github.com/tpope/vim-fugitive",
     "https://github.com/rebelot/kanagawa.nvim",
-    "https://github.com/nvim-tree/nvim-tree.lua",
     "https://github.com/mason-org/mason.nvim",
     "https://github.com/nvim-neotest/nvim-nio",
     "https://github.com/rcarriga/nvim-dap-ui",
