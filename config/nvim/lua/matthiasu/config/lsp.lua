@@ -64,6 +64,14 @@ vim.keymap.set('i', '<C-space>', function()
     vim.lsp.completion.get()
 end)
 
+vim.keymap.set('i', '<C-j>', function()
+  return vim.fn.pumvisible() == 1 and '<C-n>' or '<C-j>'
+end, { expr = true, noremap = true, desc = "LSP Completion Next" })
+
+vim.keymap.set('i', '<C-k>', function()
+  return vim.fn.pumvisible() == 1 and '<C-p>' or '<C-k>'
+end, { expr = true, noremap = true, desc = "LSP Completion Prev" })
+
 vim.opt.completeopt = 'menu,menuone,noinsert,popup,fuzzy,preview'
 
 vim.keymap.set('i', '<CR>', function()
