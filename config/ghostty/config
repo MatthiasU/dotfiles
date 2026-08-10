@@ -5,7 +5,7 @@ font-family="JetBrains Mono"
 font-thicken = true
 font-size=14
 background-opacity=1.0
-theme = Kanagawa Wave
+theme = "TokyoNight Night"
 
 # Split Navigation (Prefix Ctrl+a)
 # keybind = ctrl+a>h=goto_split:left
