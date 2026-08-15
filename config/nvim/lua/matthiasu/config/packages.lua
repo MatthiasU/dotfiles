@@ -8,7 +8,6 @@ vim.pack.add({
     "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/tpope/vim-fugitive",
     -- Color schemes & UI
-    "https://github.com/folke/tokyonight.nvim",
     "https://github.com/rebelot/kanagawa.nvim",
     "https://github.com/nvim-lualine/lualine.nvim",
     -- DAP packages
