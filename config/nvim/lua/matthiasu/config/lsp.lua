@@ -1,5 +1,3 @@
-require("mason").setup()
-
 local lsp_group = vim.api.nvim_create_augroup('lsp_attach_group', { clear = true })
 local lsp_fmt_group = vim.api.nvim_create_augroup('lsp_format_group', { clear = true })
 

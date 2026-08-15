@@ -1,19 +1,21 @@
 vim.pack.add({
+    -- LSP
     "https://github.com/neovim/nvim-lspconfig",
-    "https://github.com/nvim-tree/nvim-web-devicons",
-    "https://github.com/nvim-lualine/lualine.nvim",
-    "https://github.com/mfussenegger/nvim-dap",
+    -- File Management
     "https://github.com/stevearc/oil.nvim",
-    "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/ibhagwan/fzf-lua",
+    -- Git
+    "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/tpope/vim-fugitive",
-    "https://github.com/rebelot/kanagawa.nvim",
-    "https://github.com/mason-org/mason.nvim",
-    "https://github.com/nvim-neotest/nvim-nio",
-    "https://github.com/rcarriga/nvim-dap-ui",
-    { src = 'https://github.com/mrcjkb/rustaceanvim', version = vim.version.range('^9') },
+    -- Color schemes & UI
     "https://github.com/folke/tokyonight.nvim",
-}, { load = true })
+    "https://github.com/rebelot/kanagawa.nvim",
+    "https://github.com/nvim-lualine/lualine.nvim",
+    -- DAP packages
+    "https://github.com/nvim-neotest/nvim-nio",
+    "https://github.com/mfussenegger/nvim-dap",
+    "https://github.com/rcarriga/nvim-dap-ui",
+}, { load = false })
 
 vim.cmd.packadd('nvim.undotree')
 vim.cmd.packadd('nvim.difftool')

@@ -6,13 +6,13 @@ sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition"
 
 dap.adapters.lldb = {
     type = 'executable',
-    command = '/Library/Developer/CommandLineTools/usr/bin/lldb-dap',
+    command = 'lldb-dap',
     name = "lldb"
 }
 
 dap.adapters.debugpy = {
     type = 'executable',
-    command = '.venv/bin/python',
+    command = vim.fn.exepath("python3"),
     args = { '-m', 'debugpy.adapter' },
 }
 
@@ -44,7 +44,37 @@ dap.configurations.cpp = {
 }
 
 dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+
+local initRustDebugSymbols = function()
+    -- Find out where to look for the pretty printer Python module.
+    local rustc_sysroot = vim.fn.trim(vim.fn.system 'rustc --print sysroot')
+    assert(
+        vim.v.shell_error == 0,
+        'failed to get rust sysroot using `rustc --print sysroot`: '
+        .. rustc_sysroot
+    )
+    local script_file = rustc_sysroot .. '/lib/rustlib/etc/lldb_lookup.py'
+    local commands_file = rustc_sysroot .. '/lib/rustlib/etc/lldb_commands'
+    return {
+        ([[!command script import '%s']]):format(script_file),
+        ([[command source '%s']]):format(commands_file),
+    }
+end
+
+dap.configurations.rust = {
+    {
+        name = "Launch Executable",
+        type = "lldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+        initCommands = initRustDebugSymbols,
+    },
+}
 
 dap.configurations.python = {
     {
@@ -53,7 +83,7 @@ dap.configurations.python = {
         name = "Launch file",
         program = "${file}",
         pythonPath = function()
-            return '.venv/bin/python'
+            return vim.fn.exepath("python3")
         end,
     },
     {
@@ -64,13 +94,13 @@ dap.configurations.python = {
             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
         pythonPath = function()
-            return '.venv/bin/python'
+            return vim.fn.exepath("python3")
         end,
     },
 }
 
 require("dapui").setup()
-local dap, dapui = require("dap"), require("dapui")
+local dapui = require("dapui")
 dap.listeners.before.attach.dapui_config = function()
     dapui.open()
 end
