@@ -2,7 +2,7 @@
 keybind = super+,=text:ghostty +edit-config\n
 macos-option-as-alt = false
 font-family="JetBrains Mono"
-font-thicken = true
+font-thicken = false
 font-size=13
 background-opacity=1.0
 theme = "Kanagawa Wave"
