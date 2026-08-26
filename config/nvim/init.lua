@@ -1,3 +1,6 @@
+if vim.g.vscode then
+    require("matthiasu.config.vscode")
+else
 require("matthiasu.config.packages")
 require("matthiasu.config.keybindings")
 require("matthiasu.config.settings")
@@ -16,3 +19,4 @@ require("matthiasu.config.path")
 require("matthiasu.config.toggleterm")
 require("matthiasu.config.snippets")
 require("matthiasu.config.bazel")
+end
