@@ -34,3 +34,9 @@ end, opts)
 vim.keymap.set("n", "fs", function()
     require('vscode').call('workbench.action.findInFiles')
 end, opts)
+
+
+vim.keymap.set("n", "<leader>b", function()
+    require('vscode').call('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')
+end, opts)
+
