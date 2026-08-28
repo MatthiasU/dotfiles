@@ -1,5 +1,9 @@
 local fzf_lua = require("fzf-lua")
 fzf_lua.setup({
+    winopts = {
+        split = "belowright 12new",
+        preview = { hidden = true },
+    },
     keymap = {
         fzf = {
             ["ctrl-q"] = "select-all+accept",
@@ -8,6 +12,7 @@ fzf_lua.setup({
     fzf_opts = {
         ["--tiebreak"] = "begin,length",
         ["--history"] = vim.fn.stdpath("data") .. "/fzf_history",
+        ["--layout"] = "default"
     },
     ui_select = true
 })
