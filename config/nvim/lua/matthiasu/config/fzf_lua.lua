@@ -12,8 +12,8 @@ fzf_lua.setup({
     ui_select = true
 })
 
-vim.keymap.set('n', '<leader>ff', function() fzf_lua.files() end, { desc = 'Find Files' })
-vim.keymap.set('n', '<leader>fb', function() fzf_lua.buffers() end, { desc = 'Find Buffers' })
+vim.keymap.set('n', '<C-p>', function() fzf_lua.files() end, { desc = 'Find Files' })
+vim.keymap.set('n', '<leader>;', function() fzf_lua.buffers() end, { desc = 'Find Buffers' })
 vim.keymap.set('n', '<leader>fl', function() fzf_lua.blines() end, { desc = 'Search in file' })
 vim.keymap.set('n', '<leader>fm', function() fzf_lua.marks() end, { desc = 'Find marks' })
 
