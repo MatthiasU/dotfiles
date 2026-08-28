@@ -4,6 +4,10 @@ require("oil").setup({
         show_hidden = true,
     },
     delete_to_trash = true,
+    keymaps = {
+        ["<space>p"] = { "actions.preview", mode = "n" },
+        ["<C-p>"] = false,
+    },
 })
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", {
