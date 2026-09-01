@@ -1,7 +1,11 @@
 local lsp_group = vim.api.nvim_create_augroup('lsp_attach_group', { clear = true })
 local lsp_fmt_group = vim.api.nvim_create_augroup('lsp_format_group', { clear = true })
 
-vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
+vim.diagnostic.config({
+    virtual_text = true,
+    virtual_lines = false,
+    severity_sort = true,
+})
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
@@ -93,6 +97,4 @@ vim.lsp.enable('pyrefly')
 vim.lsp.enable('starpls')
 vim.lsp.enable('bashls')
 
-vim.diagnostic.config({
-    severity_sort = true,
-})
+
