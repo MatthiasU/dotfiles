@@ -17,7 +17,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local bufnr = args.buf
 
         -- 1. Enable Native Completion
-        vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+        if client:supports_method('textDocument/completion') then
+              vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+        end
 
         -- 2. Format on Save
         if client:supports_method('textDocument/formatting') then
