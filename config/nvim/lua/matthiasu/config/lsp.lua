@@ -80,7 +80,7 @@ vim.lsp.config("clangd", {
         "-j=4",
         "--background-index",
         "--clang-tidy",
-        "--header-insertion=iwyu",
+        "--header-insertion=never",
     },
 })
 
