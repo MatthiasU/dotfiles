@@ -3,6 +3,9 @@ local lsp_fmt_group = vim.api.nvim_create_augroup('lsp_format_group', { clear = 
 
 vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
 
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+
 vim.api.nvim_create_autocmd('LspAttach', {
     group = lsp_group,
     callback = function(args)
