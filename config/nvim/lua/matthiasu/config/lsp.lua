@@ -1,6 +1,8 @@
 local lsp_group = vim.api.nvim_create_augroup('lsp_attach_group', { clear = true })
 local lsp_fmt_group = vim.api.nvim_create_augroup('lsp_format_group', { clear = true })
 
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'fuzzy' }
+
 vim.diagnostic.config({
     virtual_text = true,
     virtual_lines = false,
@@ -18,7 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- 1. Enable Native Completion
         if client:supports_method('textDocument/completion') then
-              vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+              vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
         end
 
         -- 2. Format on Save
@@ -72,8 +74,6 @@ end, { desc = 'Format open buffer' })
 vim.keymap.set('i', '<C-space>', function()
     vim.lsp.completion.get()
 end)
-
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'fuzzy' }
 
 vim.keymap.set('i', '<CR>', function()
     return vim.fn.pumvisible() ~= 0 and '<C-y>' or '<CR>'
