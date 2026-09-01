@@ -1,7 +1,7 @@
 local lsp_group = vim.api.nvim_create_augroup('lsp_attach_group', { clear = true })
 local lsp_fmt_group = vim.api.nvim_create_augroup('lsp_format_group', { clear = true })
 
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'fuzzy' }
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'fuzzy', 'popup' }
 
 vim.diagnostic.config({
     virtual_text = true,
