@@ -30,7 +30,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 group = lsp_fmt_group,
                 buffer = bufnr,
                 callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr, async = false })
+                    vim.lsp.buf.format({
+                        bufnr = bufnr,
+                        async = false,
+                        id = client.id
+                    })
                 end,
             })
         end
