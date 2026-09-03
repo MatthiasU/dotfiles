@@ -1,4 +1,3 @@
-
 require("matthiasu.config.packages")
 require("matthiasu.config.keybindings")
 require("matthiasu.config.settings")
@@ -40,3 +39,16 @@ vim.keymap.set("n", "<leader>b", function()
     require('vscode').call('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')
 end, opts)
 
+vim.keymap.set('n', 'za', function() vim.fn.VSCodeNotify('editor.toggleFold') end, opts)
+
+-- Close/Fold current region
+vim.keymap.set('n', 'zc', function() vim.fn.VSCodeNotify('editor.fold') end, opts)
+
+-- Open/Unfold current region
+vim.keymap.set('n', 'zo', function() vim.fn.VSCodeNotify('editor.unfold') end, opts)
+
+-- Fold all regions
+vim.keymap.set('n', 'zM', function() vim.fn.VSCodeNotify('editor.foldAll') end, opts)
+
+-- Unfold all regions
+vim.keymap.set('n', 'zR', function() vim.fn.VSCodeNotify('editor.unfoldAll') end, opts)
