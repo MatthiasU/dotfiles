@@ -14,7 +14,7 @@ fzf_lua.setup({
         ["--history"] = vim.fn.stdpath("data") .. "/fzf_history",
         ["--layout"] = "default"
     },
-    ui_select = true
+    ui_select = { true }
 })
 
 vim.keymap.set('n', '<C-p>', function() fzf_lua.files() end, { desc = 'Find Files' })
