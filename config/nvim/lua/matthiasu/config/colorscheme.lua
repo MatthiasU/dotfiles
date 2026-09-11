@@ -24,4 +24,8 @@ require('kanagawa').setup({
     }
 })
 
-vim.cmd.colorscheme('kanagawa')
+require("tokyonight").setup({
+    style = "night",
+})
+
+vim.cmd.colorscheme('tokyonight')

@@ -1,19 +1,25 @@
+local function gh(repo_name)
+    return "https://github.com/" .. repo_name
+end
+
+
 vim.pack.add({
     -- LSP
-    "https://github.com/neovim/nvim-lspconfig",
+    gh("neovim/nvim-lspconfig"),
     -- File Management
-    "https://github.com/stevearc/oil.nvim",
-    "https://github.com/ibhagwan/fzf-lua",
+    gh("stevearc/oil.nvim"),
+    gh("ibhagwan/fzf-lua"),
     -- Git
-    "https://github.com/lewis6991/gitsigns.nvim",
-    "https://github.com/tpope/vim-fugitive",
+    gh("lewis6991/gitsigns.nvim"),
+    gh("tpope/vim-fugitive"),
     -- Color schemes & UI
-    "https://github.com/rebelot/kanagawa.nvim",
-    "https://github.com/nvim-lualine/lualine.nvim",
+    gh("rebelot/kanagawa.nvim"),
+    gh("folke/tokyonight.nvim"),
+    gh("nvim-lualine/lualine.nvim"),
     -- DAP packages
-    "https://github.com/nvim-neotest/nvim-nio",
-    "https://github.com/mfussenegger/nvim-dap",
-    "https://github.com/rcarriga/nvim-dap-ui",
+    gh("nvim-neotest/nvim-nio"),
+    gh("mfussenegger/nvim-dap"),
+    gh("rcarriga/nvim-dap-ui"),
 })
 
 vim.cmd.packadd('nvim.undotree')
