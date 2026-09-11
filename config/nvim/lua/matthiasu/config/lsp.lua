@@ -75,13 +75,6 @@ vim.api.nvim_create_user_command('LspFormat', function()
     vim.lsp.buf.format()
 end, { desc = 'Format open buffer' })
 
-vim.api.nvim_create_user_command('JsonFormat',
-    function()
-        vim.cmd(":%!jq --indent 4 .")
-    end,
-    {}
-)
-
 vim.keymap.set('i', '<C-space>', function()
     vim.lsp.completion.get()
 end)

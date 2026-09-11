@@ -6,6 +6,7 @@ require("matthiasu.config.undo")
 require("matthiasu.config.path")
 require("matthiasu.config.snippets")
 require("matthiasu.config.bazel")
+require("matthiasu.config.json")
 
 local vscode = require("vscode")
 local opts = { noremap = true, silent = true }
