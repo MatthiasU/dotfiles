@@ -14,7 +14,6 @@ vim.pack.add({
     gh("tpope/vim-fugitive"),
     -- Color schemes & UI
     gh("rebelot/kanagawa.nvim"),
-    gh("folke/tokyonight.nvim"),
     gh("nvim-lualine/lualine.nvim"),
     -- DAP packages
     gh("nvim-neotest/nvim-nio"),
