@@ -24,6 +24,8 @@ vim.opt.spell = false
 vim.opt.autocomplete = false
 vim.opt.pumborder = 'rounded'
 vim.opt.pummaxwidth = 80
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.lsp.foldexpr()'
