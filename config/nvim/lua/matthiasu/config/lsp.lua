@@ -79,6 +79,11 @@ vim.keymap.set('i', '<C-space>', function()
     vim.lsp.completion.get()
 end)
 
+vim.keymap.set("n", "<leader>th", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "[T]oggle Inlay [H]ints" })
+
+
 vim.keymap.set('i', '<CR>', function()
     return vim.fn.pumvisible() ~= 0 and '<C-y>' or '<CR>'
 end, { expr = true })
