@@ -15,6 +15,7 @@ vim.pack.add({
     -- Color schemes & UI
     gh("rebelot/kanagawa.nvim"),
     gh("nvim-lualine/lualine.nvim"),
+    gh("ellisonleao/gruvbox.nvim"),
     -- DAP packages
     gh("nvim-neotest/nvim-nio"),
     gh("mfussenegger/nvim-dap"),
