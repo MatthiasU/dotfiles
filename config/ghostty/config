@@ -5,7 +5,7 @@ font-family="JetBrains Mono"
 font-thicken = false
 font-size=13
 background-opacity=0.95
-theme = "Kanagawa Wave"
+theme = "Kanagawa Lotus"
 mouse-hide-while-typing = true
 
 # Split Navigation (Cmd+Shift + Vim h/j/k/l)
