@@ -5,7 +5,7 @@ font-family="JetBrains Mono"
 font-thicken = false
 font-size=13
 background-opacity=0.95
-theme = "Gruvbox Light"
+theme = light:"Kanagawa Lotus",dark:"Kanagawa Dragon"
 mouse-hide-while-typing = true
 
 # Split Navigation (Cmd+Shift + Vim h/j/k/l)
