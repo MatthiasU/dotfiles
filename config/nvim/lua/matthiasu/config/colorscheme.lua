@@ -8,9 +8,9 @@ require('kanagawa').setup({
     transparent = false,   -- do not set background color
     dimInactive = true,    -- dim inactive window `:h hl-NormalNC`
     terminalColors = true, -- define vim.g.terminal_color_{0,17}
-    theme = "lotus",       -- Load "wave" theme
+    theme = "dragon",      -- Load "wave" theme
     background = {         -- map the value of 'background' option to a theme
-        dark = "wave",     -- try "dragon" !
+        dark = "dragon",   -- try "dragon" !
         light = "lotus"
     },
     colors = {
@@ -60,4 +60,4 @@ require("gruvbox").setup({
     transparent_mode = false,
 })
 
-vim.cmd.colorscheme('kanagawa-lotus')
+vim.cmd.colorscheme('kanagawa-dragon')
