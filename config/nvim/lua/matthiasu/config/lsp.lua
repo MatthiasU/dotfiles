@@ -23,6 +23,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
         end
 
+
+        if client.name == 'ruff' then
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.documentFormattingProvider = true
+        end
+
         -- 2. Format on Save
         if client:supports_method('textDocument/formatting') then
             vim.api.nvim_clear_autocmds({ group = lsp_fmt_group, buffer = bufnr })
@@ -105,5 +111,7 @@ vim.lsp.enable('clangd')
 vim.lsp.enable('cmake')
 vim.lsp.enable('ruff')
 vim.lsp.enable('pyrefly')
+vim.lsp.enable('ty')
 vim.lsp.enable('starpls')
 vim.lsp.enable('bashls')
+vim.lsp.enable('rust_analyzer')
