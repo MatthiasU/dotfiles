@@ -5,7 +5,7 @@ require('kanagawa').setup({
     keywordStyle = { italic = true },
     statementStyle = { bold = true },
     typeStyle = {},
-    transparent = false,   -- do not set background color
+    transparent = true,    -- do not set background color
     dimInactive = true,    -- dim inactive window `:h hl-NormalNC`
     terminalColors = true, -- define vim.g.terminal_color_{0,17}
     theme = "dragon",      -- Load "wave" theme
@@ -52,12 +52,12 @@ require("gruvbox").setup({
     invert_selection = false,
     invert_signs = false,
     invert_tabline = false,
-    inverse = true, -- invert background for search, diffs, statuslines and errors
-    contrast = "",  -- can be "hard", "soft" or empty string
+    inverse = true,    -- invert background for search, diffs, statuslines and errors
+    contrast = "hard", -- can be "hard", "soft" or empty string
     palette_overrides = {},
     overrides = {},
-    dim_inactive = true,
-    transparent_mode = false,
+    dim_inactive = false,
+    transparent_mode = true,
 })
 
-vim.cmd.colorscheme('kanagawa-dragon')
+vim.cmd.colorscheme('gruvbox')
