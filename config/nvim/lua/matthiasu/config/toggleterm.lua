@@ -11,6 +11,7 @@ term.setup(
         winbar = {
             enabled = false,
         },
+        direction = "float"
     })
 
 vim.keymap.set('n', '<leader>tt', ":ToggleTerm<CR>", { noremap = true, silent = true })
