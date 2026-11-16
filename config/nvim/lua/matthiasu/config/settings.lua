@@ -36,8 +36,6 @@ vim.o.foldenable = true
 vim.opt.spell = false
 vim.opt.spelllang = { 'en_us', 'de' }
 
-vim.o.clipboard = "unnamedplus"
-
 vim.api.nvim_create_user_command('ClearQuickFix', function()
     vim.fn.setqflist({}, 'r')
 end, { desc = 'Clear the quickfix list' })
