@@ -16,3 +16,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set('n', '<C-n>', ':cnext<CR>', { desc = 'Next Quickfix item' })
 vim.keymap.set('n', '<C-p>', ':cprev<CR>', { desc = 'Previous Quickfix item' })
 vim.keymap.set('n', '<leader><leader>', '<C-^>', { desc = 'Toggle last buffer' })
+
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
