@@ -29,3 +29,7 @@ vim.keymap.set('n', '<leader>fs', function() fzf_lua.live_grep() end, { desc = '
 vim.keymap.set('n', '<leader>fq', function() fzf_lua.quickfix() end, { desc = 'Search in QuickFixlist' })
 vim.keymap.set('n', '<leader>gb', function() fzf_lua.git_branches() end, { desc = 'Git branches' })
 vim.keymap.set("n", "z=", function() fzf_lua.spell_suggest() end, { desc = "Fzf-lua spell suggest" })
+
+vim.keymap.set("n", "<leader>sw", fzf_lua.grep_cword, { desc = "FzfLua: Search word under cursor" })
+vim.keymap.set("n", "<leader>sW", fzf_lua.grep_cWORD, { desc = "FzfLua: Search WORD under cursor" })
+vim.keymap.set("v", "<leader>sw", fzf_lua.grep_visual, { desc = "FzfLua: Search visual selection" })
