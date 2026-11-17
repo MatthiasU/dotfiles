@@ -6,6 +6,7 @@ end
 vim.pack.add({
     -- LSP
     gh("neovim/nvim-lspconfig"),
+    gh("L3MON4D3/LuaSnip"),
     -- File Management
     gh("stevearc/oil.nvim"),
     gh("ibhagwan/fzf-lua"),
