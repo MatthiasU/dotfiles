@@ -81,10 +81,6 @@ local function load_project_snippets(bufnr)
     end
 
     loaded_projects[root] = true
-
-    vim.notify(
-        ("Loaded %d snippet files from %s"):format(#files, snippet_dir)
-    )
 end
 
 vim.api.nvim_create_autocmd("BufEnter", {
