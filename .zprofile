@@ -10,4 +10,4 @@ alias dotfiles="cd $HOME/Developer/dotfiles"
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PATH="/Library/Developer/CommandLineTools/usr/bin:$PATH"
-
+alias lg="lazygit"
