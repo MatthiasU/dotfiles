@@ -98,8 +98,8 @@ vim.lsp.config("clangd", {
     cmd = {
         "clangd",
         "--enable-config",
-        "-j=4",
-        "--background-index",
+        "-j=8",
+        "--background-index=0",
         "--clang-tidy",
         "--header-insertion=never",
     },
