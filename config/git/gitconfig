@@ -1,0 +1,33 @@
+[user]
+	name = ""
+	email = ""
+[core]
+	editor = nvim
+[pull]
+	rebase = true
+[push]
+  autoSetupRemote = true
+[merge]
+    tool = nvim -d
+    conflictstyle=zdiff3
+[rerere]
+  enabled = true
+[diff]
+    algorithm = histogram
+    indentHeuristic = true
+[rebase]
+  autoStash = true
+  autoSquash = true
+[alias]
+  c = commit
+  s = status
+  st = status
+  lg = log --oneline
+  last = log -1 HEAD
+  f = push --force-with-lease
+  sl = stash list
+  l  = log -8 --graph --oneline --decorate
+  ll = log --stat --decorate --source -p
+  b  = branch -vv
+
+
