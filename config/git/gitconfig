@@ -8,7 +8,7 @@
 [push]
   autoSetupRemote = true
 [merge]
-    tool = nvim -d
+    tool = nvimdiff
     conflictstyle=zdiff3
 [rerere]
   enabled = true
