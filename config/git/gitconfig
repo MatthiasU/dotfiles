@@ -29,5 +29,6 @@
   l  = log -8 --graph --oneline --decorate
   ll = log --stat --decorate --source -p
   b  = branch -vv
+  sw = "!f() { branch=$(git branch --sort=-committerdate --format='%(refname:short)' | fzf); [ -n \"$branch\" ] && git switch \"$branch\"; }; f"
 
 
