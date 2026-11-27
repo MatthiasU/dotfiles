@@ -20,3 +20,11 @@ vim.keymap.set('n', '<leader><leader>', '<C-^>', { desc = 'Toggle last buffer' }
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
+
+-- always center search results
+vim.keymap.set('n', 'n', 'nzz', { silent = true })
+vim.keymap.set('n', 'N', 'Nzz', { silent = true })
+vim.keymap.set('n', '*', '*zz', { silent = true })
+vim.keymap.set('n', '#', '#zz', { silent = true })
+vim.keymap.set('n', 'g*', 'g*zz', { silent = true })
+
