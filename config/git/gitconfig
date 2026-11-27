@@ -25,10 +25,10 @@
   lg = log --oneline
   last = log -1 HEAD
   f = push --force-with-lease
-  sl = stash list
   l  = log -8 --graph --oneline --decorate
   ll = log --stat --decorate --source -p
   b  = branch -vv
   sw = "!f() { branch=$(git branch --sort=-committerdate --format='%(refname:short)' | fzf); [ -n \"$branch\" ] && git switch \"$branch\"; }; f"
-
-
+  ss = "!f() { git stash show stash^{/$*} -p; }; f"
+  sa = "!f() { git stash apply stash^{/$*}; }; f"
+  sl = stash list
