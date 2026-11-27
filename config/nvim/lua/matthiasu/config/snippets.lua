@@ -17,38 +17,23 @@ vim.api.nvim_create_user_command('TemplateLaunchJson', function()
     vim.snippet.expand(snippet_text)
 end, { desc = "Insert launch.json template via built-in snippet engine" })
 
-
-
 local ls = require("luasnip")
 ls.setup()
 
--- require("luasnip.loaders.from_vscode").load_standalone({
---     path = vim.fn.getcwd() .. "/.vscode/cpp.code-snippets",
--- })
-
-vim.keymap.set({ "i", "s" }, "<Tab>", function()
-    if ls.expand_or_jumpable() then
-        ls.expand_or_jump()
-    else
-        vim.api.nvim_feedkeys(
-            vim.api.nvim_replace_termcodes("<Tab>", true, false, true),
-            "n",
-            false
-        )
+vim.keymap.set("i", "<C-k>", function()
+    if ls.expandable() then
+        ls.expand()
     end
-end, { silent = true })
+end, { desc = "Expand snippet" })
 
-vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-    if ls.jumpable(-1) then
-        ls.jump(-1)
-    else
-        vim.api.nvim_feedkeys(
-            vim.api.nvim_replace_termcodes("<S-Tab>", true, false, true),
-            "n",
-            false
-        )
+vim.api.nvim_create_user_command("SnipList", function()
+    local ft_list = require("luasnip").available()[vim.bo.filetype] or {}
+    local snips = {}
+    for _, item in pairs(ft_list) do
+        snips[item.trigger] = item.name
     end
-end, { silent = true })
+    print(vim.inspect(snips))
+end, {})
 
 local vscode_loader = require("luasnip.loaders.from_vscode")
 local loaded_projects = {}
