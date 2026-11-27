@@ -9,8 +9,8 @@ if [ -d ".venv" ] && [ -f ".venv/bin/activate" ]; then
   source .venv/bin/activate
 fi
 
+export PATH="/Library/Developer/CommandLineTools/usr/bin:$PATH"
 alias dotfiles="cd $HOME/Developer/dotfiles"
 export EDITOR='nvim'
 export VISUAL='nvim'
-export PATH="/Library/Developer/CommandLineTools/usr/bin:$PATH"
 alias lg="lazygit"
