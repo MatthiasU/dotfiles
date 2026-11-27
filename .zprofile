@@ -14,3 +14,13 @@ alias dotfiles="cd $HOME/Developer/dotfiles"
 export EDITOR='nvim'
 export VISUAL='nvim'
 alias lg="lazygit"
+
+alias yr='cal -y'
+alias e=nvim
+alias m=make
+alias o=open
+alias g=git
+alias gc='git checkout'
+alias ga='git add -p'
+alias vimdiff='nvim -d'
+alias gah 'git stash; and git pull --rebase; and git stash pop'
