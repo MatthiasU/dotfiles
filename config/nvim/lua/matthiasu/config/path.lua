@@ -58,6 +58,11 @@ vim.api.nvim_create_user_command(
     }
 )
 
+vim.api.nvim_create_user_command("PathResolve", function()
+    local path = vim.api.nvim_buf_get_name(0)
+    vim.api.nvim_buf_set_name(0, vim.fn.resolve(path))
+end, { desc = "Resolve the current buffer path through symlinks" })
+
 vim.keymap.set('n', '<leader>cp', ':CopyPath<CR>', { desc = 'copy absolute path' })
 vim.keymap.set('n', '<leader>cP', ':CopyRelPath<CR>', { desc = 'copy relative path' })
 vim.keymap.set('n', '<leader>cf', ":CopyFileName<CR>", { desc = 'copy file name' })
